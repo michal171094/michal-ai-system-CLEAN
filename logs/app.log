@@ -1,0 +1,673 @@
+2025-09-24 21:14:43 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:14:43 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:14:43 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:42:03 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:42:03 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:42:03 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:42:24 [ERROR]: GET /?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758742944105 {
+  "service": "michal-ai-assistant",
+  "statusCode": 500,
+  "duration": "12ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null,
+  "contentLength": 1430
+}
+2025-09-24 21:43:13 [INFO]: SIGINT received, shutting down gracefully {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:43:49 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:43:49 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:43:49 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:44:05 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758743045000",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:44:05 [ERROR]: GET /?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758743045000 {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:48:14 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:48:14 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:48:14 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:48:19 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:48:19 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "10ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:48:45 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:48:45 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:49:16 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:49:16 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:49:20 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:49:20 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:50:13 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:50:13 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:50:13 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:55:47 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:55:47 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:55:47 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:17:45 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:17:45 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:17:45 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:11 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:11 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:11 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:12 [INFO]: User connected: wh8L28TQSCuxrkaQAAAD {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:12 [INFO]: User connected: 5ou_XgmId7rcH1VRAAAE {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:12 [INFO]: User connected: DkPd9pB3t2hROp7SAAAF {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:24:12 [INFO]: User connected: MEM9Mm2dhQ-003JvAAAH {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:50 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:50 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:50 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:50 [INFO]: GET /health {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "8ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.6584",
+  "userId": null,
+  "contentLength": 19900
+}
+2025-09-25 20:25:52 [INFO]: User connected: nkfjtQ0O7hHelzLqAAAB {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:53 [INFO]: User connected: pnJs35_eoucdg04HAAAD {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:55 [INFO]: User connected: M6ODHWt9kSh1j9EKAAAG {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:25:55 [INFO]: User connected: JmMu1VHZhpcW-M_1AAAH {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:27:09 [INFO]: GET /health {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.6584",
+  "userId": null,
+  "contentLength": 19900
+}
+2025-09-25 20:37:22 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:22 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:22 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:22 [ERROR]: GET /api/tasks {
+  "service": "michal-ai-assistant",
+  "statusCode": 401,
+  "duration": "12ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.6584",
+  "userId": null,
+  "contentLength": "67"
+}
+2025-09-25 20:37:24 [INFO]: User connected: UaMzCcewSCL2Ipb5AAAE {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:24 [INFO]: User connected: hMbkwXfaiKJX3y0VAAAF {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:24 [INFO]: User connected: 02H0MrcW_VqanJKKAAAG {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:37:24 [INFO]: User connected: s5LeYtIYvcYS4eyzAAAH {
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:39:52 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "609"
+}
+2025-09-25 20:39:52 [INFO]: GET /api/sync/academic {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "192"
+}
+2025-09-25 20:39:52 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "5ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-25 20:39:53 [INFO]: GET /api/sync/bureaucracy {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "195"
+}
+2025-09-25 20:39:53 [INFO]: GET /api/sync/debts {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "189"
+}
+2025-09-25 20:39:53 [INFO]: GET /api/sync/emails {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "190"
+}
+2025-09-25 20:39:59 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-25 20:39:59 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-25 20:39:59 [INFO]: GET /api/sync/academic {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "4ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "192"
+}
+2025-09-25 20:39:59 [INFO]: GET /api/sync/bureaucracy {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "195"
+}
+2025-09-25 20:39:59 [INFO]: GET /api/sync/debts {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "189"
+}
+2025-09-25 20:39:59 [INFO]: GET /api/sync/emails {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "190"
+}
+2025-09-25 20:40:11 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-25 20:40:55 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "4ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-25 21:39:21 [INFO]: SIGINT received, shutting down gracefully {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:26 [INFO]: 🚀 מערכת עוזר AI אישית רצה על פורט 3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:26 [INFO]: 🌐 סביבה: development {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:26 [INFO]: 📊 Dashboard זמין בכתובת: http://localhost:3000 {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:31 [INFO]: User connected: itJP7k1jj1to7zKPAAAC {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:31 [INFO]: User connected: tSJVo7Y0ofKtAnoTAAAD {
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:19:47 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": 21981
+}
+2025-09-26 23:20:18 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:20:49 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:21:20 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:21:51 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:22:22 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "0ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:22:53 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:09 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "609"
+}
+2025-09-26 23:23:10 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "96ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:10 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:10 [INFO]: GET /api/sync/academic {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "192"
+}
+2025-09-26 23:23:10 [INFO]: GET /api/ai/status {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "9ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": 21981
+}
+2025-09-26 23:23:10 [INFO]: GET /api/connectors/status {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "17ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": 21981
+}
+2025-09-26 23:23:10 [INFO]: GET /api/sync/bureaucracy {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "195"
+}
+2025-09-26 23:23:10 [INFO]: GET /api/sync/debts {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "189"
+}
+2025-09-26 23:23:10 [INFO]: GET /api/sync/emails {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "190"
+}
+2025-09-26 23:23:11 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:14 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:21 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:22 [INFO]: GET /api/connectors/status {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:23 [INFO]: GET /api/smart-overview {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:24 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:24 [INFO]: GET /api/connectors/status {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:37 [INFO]: GET /api/connectors/status {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:38 [ERROR]: POST /api/gmail/sync {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "52"
+}
+2025-09-26 23:23:39 [INFO]: GET /api/gmail/auth-url {
+  "service": "michal-ai-assistant",
+  "statusCode": 200,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": 21981
+}
+2025-09-26 23:23:40 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:23:55 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:24:10 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "0ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:24:26 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:24:41 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:24:57 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "0ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-26 23:25:12 [INFO]: GET /api/agent/metrics {
+  "service": "michal-ai-assistant",
+  "statusCode": 304,
+  "duration": "0ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}

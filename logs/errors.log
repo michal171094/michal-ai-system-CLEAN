@@ -1,0 +1,122 @@
+2025-09-24 21:42:24 [ERROR]: GET /?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758742944105 {
+  "service": "michal-ai-assistant",
+  "statusCode": 500,
+  "duration": "12ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null,
+  "contentLength": 1430
+}
+2025-09-24 21:44:05 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758743045000",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:44:05 [ERROR]: GET /?id=68ef0a01-2366-44ea-99ce-7c7b37fcfbc8&vscodeBrowserReqId=1758743045000 {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "7ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.104.1 Chrome/138.0.7204.235 Electron/37.3.1 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:48:19 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:48:19 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "10ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:48:45 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:48:45 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:49:16 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:49:16 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "3ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-24 21:49:20 [ERROR]: שגיאה לא מטופלת: {
+  "service": "michal-ai-assistant",
+  "error": "ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "stack": "Error: ENOENT: no such file or directory, stat 'C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\public\\index.html'",
+  "url": "/",
+  "method": "GET",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null
+}
+2025-09-24 21:49:20 [ERROR]: GET / {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "2ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "54"
+}
+2025-09-25 20:37:22 [ERROR]: GET /api/tasks {
+  "service": "michal-ai-assistant",
+  "statusCode": 401,
+  "duration": "12ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.6584",
+  "userId": null,
+  "contentLength": "67"
+}
+2025-09-26 23:23:38 [ERROR]: POST /api/gmail/sync {
+  "service": "michal-ai-assistant",
+  "statusCode": 404,
+  "duration": "1ms",
+  "ip": "::1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+  "userId": null,
+  "contentLength": "52"
+}

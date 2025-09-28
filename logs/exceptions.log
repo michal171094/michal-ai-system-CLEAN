@@ -1,0 +1,4795 @@
+2025-09-24 21:13:07 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 21:13:07 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 4736,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 73015296,
+      "heapTotal": 36556800,
+      "heapUsed": 21718104,
+      "external": 2632101,
+      "arrayBuffers": 19068
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 377003.781
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:13:27 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 21:13:27 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 33288,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 72773632,
+      "heapTotal": 36294656,
+      "heapUsed": 21698000,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 377023.765
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:14:04 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 21:14:04 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 16220,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 72949760,
+      "heapTotal": 36556800,
+      "heapUsed": 21653904,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 377061.468
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 21:49:06 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 21:49:06 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 13700,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 67670016,
+      "heapTotal": 36556800,
+      "heapUsed": 21643640,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 379163.437
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:00:11 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 22:00:11 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 36760,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 74403840,
+      "heapTotal": 36556800,
+      "heapUsed": 21606856,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 379828.484
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:00:31 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 22:00:31 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 28588,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 74932224,
+      "heapTotal": 36556800,
+      "heapUsed": 21610800,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 379848.078
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:01:35 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 22:01:35 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 36644,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 74661888,
+      "heapTotal": 36818944,
+      "heapUsed": 21657800,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 379912.156
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-24 22:02:55 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:175:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:175:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Wed Sep 24 2025 22:02:55 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 30124,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe"
+    ],
+    "memoryUsage": {
+      "rss": 75042816,
+      "heapTotal": 36818944,
+      "heapUsed": 21565056,
+      "external": 2682308,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 379992.546
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 175,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-25 20:18:46 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:256:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:256:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Thu Sep 25 2025 20:18:46 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 30076,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 63467520,
+      "heapTotal": 36556800,
+      "heapUsed": 21641544,
+      "external": 2605737,
+      "arrayBuffers": 18892
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 460141.171
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 256,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-26 23:24:42 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:256:8)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:256:8)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)",
+  "exception": true,
+  "date": "Fri Sep 26 2025 23:24:42 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 31220,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 65282048,
+      "heapTotal": 36274176,
+      "heapUsed": 17309040,
+      "external": 2605776,
+      "arrayBuffers": 18891
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 557697.312
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 8,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 256,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:00:21 [ERROR]: uncaughtException: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+    at new OpenAI (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\openai\index.js:74:19)
+    at new AIService (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:7:23)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:371:18)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12) {
+  "error": {},
+  "stack": "Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).\n    at new OpenAI (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js:74:19)\n    at new AIService (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:7:23)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:371:18)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:00:21 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 52036,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 57561088,
+      "heapTotal": 30769152,
+      "heapUsed": 17400928,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 610236.234
+  },
+  "trace": [
+    {
+      "column": 19,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js",
+      "function": "new OpenAI",
+      "line": 74,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": "new AIService",
+      "line": 7,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 18,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": null,
+      "line": 371,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:00:39 [ERROR]: uncaughtException: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+    at new OpenAI (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\openai\index.js:74:19)
+    at new AIService (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:7:23)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:371:18)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12) {
+  "error": {},
+  "stack": "Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).\n    at new OpenAI (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js:74:19)\n    at new AIService (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:7:23)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:371:18)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:00:39 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 13724,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 57933824,
+      "heapTotal": 31035392,
+      "heapUsed": 17659672,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 610253.703
+  },
+  "trace": [
+    {
+      "column": 19,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js",
+      "function": "new OpenAI",
+      "line": 74,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": "new AIService",
+      "line": 7,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 18,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": null,
+      "line": 371,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:10:33 [ERROR]: uncaughtException: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+    at new OpenAI (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\openai\index.js:74:19)
+    at new AIService (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:7:23)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\services\AIService.js:371:18)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12) {
+  "error": {},
+  "stack": "Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).\n    at new OpenAI (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js:74:19)\n    at new AIService (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:7:23)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js:371:18)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:10:33 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 48404,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 58449920,
+      "heapTotal": 30769152,
+      "heapUsed": 17725440,
+      "external": 2442878,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 610847.75
+  },
+  "trace": [
+    {
+      "column": 19,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\openai\\index.js",
+      "function": "new OpenAI",
+      "line": 74,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": "new AIService",
+      "line": 7,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 18,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\services\\AIService.js",
+      "function": null,
+      "line": 371,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:12:06 [ERROR]: uncaughtException: logger.info is not a function
+TypeError: logger.info is not a function
+    at Database.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\config\database.js:27:24) {
+  "error": {},
+  "stack": "TypeError: logger.info is not a function\n    at Database.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\config\\database.js:27:24)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:12:06 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 43976,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 59420672,
+      "heapTotal": 31035392,
+      "heapUsed": 18274616,
+      "external": 2442878,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 610941.421
+  },
+  "trace": [
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\config\\database.js",
+      "function": null,
+      "line": 27,
+      "method": null,
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:13:08 [ERROR]: uncaughtException: logger.info is not a function
+TypeError: logger.info is not a function
+    at Server.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:140:20)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:531:35)
+    at emitListeningNT (node:net:1983:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {
+  "error": {},
+  "stack": "TypeError: logger.info is not a function\n    at Server.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:140:20)\n    at Object.onceWrapper (node:events:633:28)\n    at Server.emit (node:events:531:35)\n    at emitListeningNT (node:net:1983:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:13:08 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 39600,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 60747776,
+      "heapTotal": 33914880,
+      "heapUsed": 15934880,
+      "external": 2559886,
+      "arrayBuffers": 18635
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 611003.484
+  },
+  "trace": [
+    {
+      "column": 20,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 140,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "Object.onceWrapper",
+      "line": 633,
+      "method": "onceWrapper",
+      "native": false
+    },
+    {
+      "column": 35,
+      "file": "node:events",
+      "function": "Server.emit",
+      "line": 531,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:net",
+      "function": "emitListeningNT",
+      "line": 1983,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 21,
+      "file": "node:internal/process/task_queues",
+      "function": "process.processTicksAndRejections",
+      "line": 89,
+      "method": "processTicksAndRejections",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:14:52 [ERROR]: uncaughtException: logger.info is not a function
+TypeError: logger.info is not a function
+    at Namespace.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:73:12)
+    at Namespace.emit (node:events:519:28)
+    at Namespace.emitReserved (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\typed-events.js:56:22)
+    at Namespace._doConnect (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:276:14)
+    at C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:238:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11) {
+  "error": {},
+  "stack": "TypeError: logger.info is not a function\n    at Namespace.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:73:12)\n    at Namespace.emit (node:events:519:28)\n    at Namespace.emitReserved (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js:56:22)\n    at Namespace._doConnect (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:276:14)\n    at C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:238:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:14:52 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 47344,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 61030400,
+      "heapTotal": 34439168,
+      "heapUsed": 15370472,
+      "external": 2563993,
+      "arrayBuffers": 22782
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 611106.921
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 73,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "Namespace.emit",
+      "line": 519,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js",
+      "function": "Namespace.emitReserved",
+      "line": 56,
+      "method": "emitReserved",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": "Namespace._doConnect",
+      "line": 276,
+      "method": "_doConnect",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": null,
+      "line": 238,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 11,
+      "file": "node:internal/process/task_queues",
+      "function": "process.processTicksAndRejections",
+      "line": 85,
+      "method": "processTicksAndRejections",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:19:14 [ERROR]: uncaughtException: logger.info is not a function
+TypeError: logger.info is not a function
+    at Namespace.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:73:12)
+    at Namespace.emit (node:events:519:28)
+    at Namespace.emitReserved (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\typed-events.js:56:22)
+    at Namespace._doConnect (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:276:14)
+    at C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:238:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11) {
+  "error": {},
+  "stack": "TypeError: logger.info is not a function\n    at Namespace.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:73:12)\n    at Namespace.emit (node:events:519:28)\n    at Namespace.emitReserved (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js:56:22)\n    at Namespace._doConnect (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:276:14)\n    at C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:238:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:19:14 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 23240,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 58105856,
+      "heapTotal": 33914880,
+      "heapUsed": 15378512,
+      "external": 2563993,
+      "arrayBuffers": 22782
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 611369.562
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 73,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "Namespace.emit",
+      "line": 519,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js",
+      "function": "Namespace.emitReserved",
+      "line": 56,
+      "method": "emitReserved",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": "Namespace._doConnect",
+      "line": 276,
+      "method": "_doConnect",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": null,
+      "line": 238,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 11,
+      "file": "node:internal/process/task_queues",
+      "function": "process.processTicksAndRejections",
+      "line": 85,
+      "method": "processTicksAndRejections",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 14:30:20 [ERROR]: uncaughtException: logger.info is not a function
+TypeError: logger.info is not a function
+    at Namespace.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\server.js:73:12)
+    at Namespace.emit (node:events:519:28)
+    at Namespace.emitReserved (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\typed-events.js:56:22)
+    at Namespace._doConnect (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:276:14)
+    at C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\socket.io\dist\namespace.js:238:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11) {
+  "error": {},
+  "stack": "TypeError: logger.info is not a function\n    at Namespace.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js:73:12)\n    at Namespace.emit (node:events:519:28)\n    at Namespace.emitReserved (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js:56:22)\n    at Namespace._doConnect (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:276:14)\n    at C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js:238:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 14:30:20 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 50192,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js"
+    ],
+    "memoryUsage": {
+      "rss": 60936192,
+      "heapTotal": 33914880,
+      "heapUsed": 15455432,
+      "external": 2564008,
+      "arrayBuffers": 22797
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 612034.921
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\server.js",
+      "function": null,
+      "line": 73,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "Namespace.emit",
+      "line": 519,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\typed-events.js",
+      "function": "Namespace.emitReserved",
+      "line": 56,
+      "method": "emitReserved",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": "Namespace._doConnect",
+      "line": 276,
+      "method": "_doConnect",
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\socket.io\\dist\\namespace.js",
+      "function": null,
+      "line": 238,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 11,
+      "file": "node:internal/process/task_queues",
+      "function": "process.processTicksAndRejections",
+      "line": 85,
+      "method": "processTicksAndRejections",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 18:47:17 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:861:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:861:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 18:47:17 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 14716,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 58437632,
+      "heapTotal": 30773248,
+      "heapUsed": 16796952,
+      "external": 2559886,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 627452.437
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 861,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 18:52:14 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:861:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:861:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 18:52:14 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 32760,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 62648320,
+      "heapTotal": 30511104,
+      "heapUsed": 16944680,
+      "external": 2559886,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 627749.093
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 861,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 22:20:04 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1715:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1715:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 22:20:04 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 41832,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 146169856,
+      "heapTotal": 104280064,
+      "heapUsed": 75866528,
+      "external": 2854855,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 640219.484
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1715,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 22:28:00 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1779:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1779:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 22:28:00 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 42988,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 146935808,
+      "heapTotal": 105328640,
+      "heapUsed": 78567000,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 640695.453
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1779,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 22:43:46 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1779:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1779:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 22:43:46 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 44068,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 147025920,
+      "heapTotal": 104542208,
+      "heapUsed": 79437888,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 641640.718
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1779,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 23:14:47 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1784:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1784:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 23:14:47 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 47124,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 147128320,
+      "heapTotal": 104804352,
+      "heapUsed": 78849024,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 643502
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1784,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 23:29:15 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1837:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1837:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 23:29:15 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 15120,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 146935808,
+      "heapTotal": 104419328,
+      "heapUsed": 79557848,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 644370.015
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1837,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 23:35:34 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:1881:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:1881:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 23:35:34 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 15188,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 147189760,
+      "heapTotal": 104947712,
+      "heapUsed": 79381384,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 644749.296
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 1881,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-27 23:46:33 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2058:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2058:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sat Sep 27 2025 23:46:33 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 10124,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 147677184,
+      "heapTotal": 104697856,
+      "heapUsed": 79470400,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 645407.671
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2058,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 00:06:44 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2058:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2058:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 00:06:44 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 27292,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 147746816,
+      "heapTotal": 104960000,
+      "heapUsed": 78186112,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 646619.093
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2058,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 00:25:37 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2050:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2050:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 00:25:37 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 24532,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 146386944,
+      "heapTotal": 103649280,
+      "heapUsed": 80191976,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 647752.515
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2050,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 11:31:21 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2358:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2358:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 11:31:21 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 34180,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 152342528,
+      "heapTotal": 107081728,
+      "heapUsed": 75095032,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 687696.5
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2358,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:00:15 [ERROR]: uncaughtException: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+Error: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js:3:13)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14) {
+  "error": {
+    "code": "MODULE_NOT_FOUND",
+    "requireStack": [
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ]
+  },
+  "stack": "Error: Cannot find module 'csv-parser'\nRequire stack:\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)\n    at require (node:internal/modules/helpers:147:16)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js:3:13)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:00:15 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 4012,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 53686272,
+      "heapTotal": 30875648,
+      "heapUsed": 17306864,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 700230.578
+  },
+  "trace": [
+    {
+      "column": 15,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._resolveFilename",
+      "line": 1383,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "defaultResolveImpl",
+      "line": 1025,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "resolveForCJSWithHooks",
+      "line": 1030,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 37,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1192,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    },
+    {
+      "column": 16,
+      "file": "node:internal/modules/helpers",
+      "function": "require",
+      "line": 147,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "function": null,
+      "line": 3,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:00:37 [ERROR]: uncaughtException: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+Error: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js:3:13)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14) {
+  "error": {
+    "code": "MODULE_NOT_FOUND",
+    "requireStack": [
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ]
+  },
+  "stack": "Error: Cannot find module 'csv-parser'\nRequire stack:\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)\n    at require (node:internal/modules/helpers:147:16)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js:3:13)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:00:37 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 34672,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 53743616,
+      "heapTotal": 30613504,
+      "heapUsed": 17393080,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 700252.484
+  },
+  "trace": [
+    {
+      "column": 15,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._resolveFilename",
+      "line": 1383,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "defaultResolveImpl",
+      "line": 1025,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "resolveForCJSWithHooks",
+      "line": 1030,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 37,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1192,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    },
+    {
+      "column": 16,
+      "file": "node:internal/modules/helpers",
+      "function": "require",
+      "line": 147,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "function": null,
+      "line": 3,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:00:47 [ERROR]: uncaughtException: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+Error: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js:3:13)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14) {
+  "error": {
+    "code": "MODULE_NOT_FOUND",
+    "requireStack": [
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ]
+  },
+  "stack": "Error: Cannot find module 'csv-parser'\nRequire stack:\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)\n    at require (node:internal/modules/helpers:147:16)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js:3:13)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:00:47 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 35600,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 53723136,
+      "heapTotal": 30875648,
+      "heapUsed": 17394192,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 700262
+  },
+  "trace": [
+    {
+      "column": 15,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._resolveFilename",
+      "line": 1383,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "defaultResolveImpl",
+      "line": 1025,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "resolveForCJSWithHooks",
+      "line": 1030,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 37,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1192,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    },
+    {
+      "column": 16,
+      "file": "node:internal/modules/helpers",
+      "function": "require",
+      "line": 147,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "function": null,
+      "line": 3,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:00:55 [ERROR]: uncaughtException: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+Error: Cannot find module 'csv-parser'
+Require stack:
+- C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js
+- C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\scripts\loadRealData.js:3:13)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14) {
+  "error": {
+    "code": "MODULE_NOT_FOUND",
+    "requireStack": [
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ]
+  },
+  "stack": "Error: Cannot find module 'csv-parser'\nRequire stack:\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js\n- C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)\n    at Function._load (node:internal/modules/cjs/loader:1192:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)\n    at Module.require (node:internal/modules/cjs/loader:1463:12)\n    at require (node:internal/modules/helpers:147:16)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js:3:13)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:00:55 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 42468,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 53751808,
+      "heapTotal": 30875648,
+      "heapUsed": 17370368,
+      "external": 2441702,
+      "arrayBuffers": 18675
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 700269.75
+  },
+  "trace": [
+    {
+      "column": 15,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._resolveFilename",
+      "line": 1383,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "defaultResolveImpl",
+      "line": 1025,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 22,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "resolveForCJSWithHooks",
+      "line": 1030,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 37,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1192,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "wrapModuleLoad",
+      "line": 237,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1463,
+      "method": "require",
+      "native": false
+    },
+    {
+      "column": 16,
+      "file": "node:internal/modules/helpers",
+      "function": "require",
+      "line": 147,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\scripts\\loadRealData.js",
+      "function": null,
+      "line": 3,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:37:51 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2211:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2211:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:37:51 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 36164,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 142405632,
+      "heapTotal": 105234432,
+      "heapUsed": 79171584,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 702486
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2211,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:53:48 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2286:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2286:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:53:48 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 50828,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 140447744,
+      "heapTotal": 104980480,
+      "heapUsed": 79870352,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 703442.812
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2286,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:54:06 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2286:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2286:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:54:06 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 35328,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 141111296,
+      "heapTotal": 104980480,
+      "heapUsed": 79485320,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 703460.828
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2286,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
+2025-09-28 15:56:03 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (C:\Users\admin\Downloads\michal-ai-system.zip\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\admin\Downloads\michal-ai-system.zip\simple-server.js:2210:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  "error": {
+    "code": "EADDRINUSE",
+    "errno": -4091,
+    "syscall": "listen",
+    "address": "::",
+    "port": 3000
+  },
+  "stack": "Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1940:16)\n    at listenInCluster (node:net:1997:12)\n    at Server.listen (node:net:2102:7)\n    at Function.listen (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js:635:24)\n    at Object.<anonymous> (C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js:2210:5)\n    at Module._compile (node:internal/modules/cjs/loader:1706:14)\n    at Object..js (node:internal/modules/cjs/loader:1839:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Function._load (node:internal/modules/cjs/loader:1263:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",
+  "exception": true,
+  "date": "Sun Sep 28 2025 15:56:03 GMT+0200 (Central European Summer Time)",
+  "process": {
+    "pid": 7596,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v22.19.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js"
+    ],
+    "memoryUsage": {
+      "rss": 140853248,
+      "heapTotal": 104448000,
+      "heapUsed": 79639464,
+      "external": 2858410,
+      "arrayBuffers": 19055
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 703578.359
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "Server.setupListenHandle [as _listen2]",
+      "line": 1940,
+      "method": "setupListenHandle [as _listen2]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:net",
+      "function": "listenInCluster",
+      "line": 1997,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 7,
+      "file": "node:net",
+      "function": "Server.listen",
+      "line": 2102,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 24,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\node_modules\\express\\lib\\application.js",
+      "function": "Function.listen",
+      "line": 635,
+      "method": "listen",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "C:\\Users\\admin\\Downloads\\michal-ai-system.zip\\simple-server.js",
+      "function": null,
+      "line": 2210,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1706,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Object..js",
+      "line": 1839,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1441,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Function._load",
+      "line": 1263,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:diagnostics_channel",
+      "function": "TracingChannel.traceSync",
+      "line": 322,
+      "method": "traceSync",
+      "native": false
+    }
+  ],
+  "service": "michal-ai-assistant"
+}
