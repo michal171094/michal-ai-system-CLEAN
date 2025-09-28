@@ -1,0 +1,580 @@
+/* ==== THEME OVERRIDES — COLORS ONLY (paste at end) ==== */
+
+/* מיפוי משתנים מערכתיים לפלטה החדשה */
+:root {
+  /* בסיס הפלטה */
+  --primary-purple: #96758d;
+  --secondary-teal: #75968c;
+  --background-main: #e6d3d9;
+  --background-cards: #f9f6f7;
+  --background-white: #ffffff;
+  --hover-color: #f2e9ec;
+
+  /* טקסט */
+  --text-primary: #000000;
+  --text-regular: #333333;
+  --text-secondary: #96758d;
+  --text-accent: #75968c;
+  --text-white: #ffffff;
+
+  /* גבולות/חלוקות */
+  --border-light: #dddddd;
+  --border-color: rgba(150,117,141,0.30);
+
+  /* סמנטיים עיקריים (שומרים אדום/כתום לאזהרות/שגיאות) */
+  --status-success: var(--secondary-teal);
+  --status-important: var(--primary-purple);
+  --status-neutral: var(--background-white);
+  --status-info: var(--secondary-teal);
+
+  /* רקעים כוללים */
+  --bg-primary: var(--background-main);
+  --bg-card: var(--background-cards);
+  --bg-overlay: rgba(150,117,141,0.10);
+
+  /* מערכת – ממופים לפלטה */
+  --color-background: var(--background-main);
+  --color-surface: var(--background-white);
+  --color-text: var(--text-regular);
+  --color-text-secondary: rgba(51,51,51,0.7);
+
+  --color-primary: var(--primary-purple);
+  --color-primary-hover: #7a5f76;   /* כהות קלה לסגול */
+  --color-primary-active: #7a5f76;
+
+  --color-secondary: rgba(117,150,140,0.12);
+  --color-secondary-hover: rgba(117,150,140,0.20);
+  --color-secondary-active: rgba(117,150,140,0.25);
+
+  --color-border: var(--border-color);
+  --color-card-border: var(--border-light);
+  --color-card-border-inner: var(--border-light);
+
+  --color-success: var(--status-success);
+  --color-info: var(--status-info);
+  --color-focus-ring: rgba(150,117,141,0.40);
+  --color-btn-primary-text: var(--text-white);
+
+  /* RGB – לשקיפויות */
+  --color-teal-500-rgb: 117,150,140;
+  --color-success-rgb: 117,150,140;
+
+  /* גוונים כהים תואמים */
+  --dark-pink: #7a5f76;  /* סגול כהה יותר */
+  --dark-green: #62806f; /* טורקיז-ירקרק כהה יותר */
+}
+
+/* רקע עמוד כללי */
+body { 
+  background: var(--background-main); 
+  color: var(--text-regular); 
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* מבנה אפליקציה */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: var(--background-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app-nav {
+  background: var(--background-cards);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.dashboard-section {
+  background: var(--background-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.chat-section {
+  background: var(--background-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .app-main {
+    padding: 1rem;
+  }
+}
+
+/* מניעת zoom out אוטומטי */
+@media (max-width: 480px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  body {
+    min-width: 320px;
+    overflow-x: auto;
+  }
+}
+
+/* קישורים – באותו קו צבע ראשי */
+a { color: var(--primary-purple); }
+a:hover { color: var(--dark-pink); }
+
+/* כפתורים */
+.btn--primary,
+.action-btn.primary,
+.mgmt-btn.primary,
+.btn--primary:hover,
+.send-btn,
+.apply-action-btn,
+.small-btn { 
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-pink)) !important; 
+  color: var(--text-white) !important;
+}
+.btn--primary:hover,
+.action-btn.primary:hover,
+.mgmt-btn.primary:hover,
+.send-btn:hover,
+.apply-action-btn:hover,
+.small-btn:hover {
+  background: var(--dark-pink) !important;
+}
+
+/* כפתור משני / הצללה משנית בגוון הטורקיז-ירקרק */
+.btn--secondary,
+.mgmt-btn.secondary,
+.small-btn.secondary,
+.status--success,
+.status--info,
+.score-badge,
+.correspond-badge.has-mails {
+  background: linear-gradient(135deg, var(--secondary-teal), var(--dark-green)) !important;
+  color: #fff !important;
+  border-color: rgba(var(--color-teal-500-rgb),0.25) !important;
+}
+
+/* כפתור מסגרת */
+.btn--outline { 
+  border-color: var(--primary-purple) !important; 
+  color: var(--primary-purple) !important; 
+}
+.btn--outline:hover { background: var(--hover-color) !important; }
+
+/* כרטיסים/טבלאות */
+.card,
+.table-container,
+.tasks-table,
+.debts-table,
+.dashboard-section,
+.chat-section,
+.document-recommendation,
+.update-card,
+.sync-update-item,
+.email-result,
+.stat-card,
+.smart-stat,
+.connector-card {
+  background: var(--background-white) !important;
+  border-color: var(--border-light) !important;
+}
+.priorities-table thead tr,
+.nav-tabs,
+.chat-header { background: var(--background-cards) !important; }
+.priorities-table tbody tr:hover,
+.nav-tab:hover,
+.card:hover { background: var(--hover-color) !important; }
+
+/* תגיות סטטוס כללי עם הפלטה */
+.status--warning { background: var(--primary-purple) !important; color: #fff !important; border-color: var(--primary-purple) !important; }
+.status--neutral { background: var(--background-white) !important; color: var(--text-primary) !important; border: 1px solid var(--primary-purple) !important; }
+
+/* לינקים למסמכים וכפתורי פעולה “כחולים” → סגול/טורקיז */
+.document-link,
+.rec-action-btn,
+.sync-btn,
+.template-select:hover,
+.quick-btn:hover,
+.rec-action-btn:hover,
+.rec-action-btn,
+.sync-btn.emails,
+.sync-btn.academic,
+.sync-btn.bureaucracy {
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-pink)) !important;
+}
+.document-link.image,
+.sync-btn,
+.action-btn.success,
+.mgmt-btn.success,
+.rec-action-btn.approve {
+  background: linear-gradient(135deg, var(--secondary-teal), var(--dark-green)) !important;
+}
+
+}
+
+/* הובר/פוקוס */
+:focus-visible { outline: 2px solid var(--primary-purple); }
+#chatInput:focus { border-color: var(--primary-purple); box-shadow: 0 0 0 3px rgba(150,117,141,0.25); }
+
+/* תגיות "חדש/ניטרלי" המבוססות רקע אפור → רקע לבן וקו סגול עדין */
+.status-badge.חדש,
+.domain-badge,
+.category {
+  background: var(--background-white) !important;
+  color: var(--text-regular) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+/* טאבים פעילים */
+.nav-tab.active {
+  background: var(--background-white) !important;
+  color: var(--primary-purple) !important;
+  border-bottom-color: var(--primary-purple) !important;
+}
+
+/* כותרות/טקסט */
+h1,h2,h3,h4,h5,h6 { color: var(--text-primary) !important; }
+
+/* ========== פיצ'רים חדשים של LangGraph AI ========== */
+
+/* הוספה מהירה של משימות */
+.quick-add-section {
+  margin: 15px 0;
+  padding: 15px;
+  background: var(--background-cards);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quick-add-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quick-add-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.quick-add-input:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(150,117,141,0.15);
+  outline: none;
+}
+
+.quick-add-btn {
+  padding: 10px 16px;
+  background: var(--primary-purple);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.quick-add-btn:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* פעולות מוצעות של AI */
+.actions-message {
+  border-left: 4px solid var(--secondary-teal) !important;
+  background: var(--background-cards) !important;
+}
+
+.actions-header {
+  font-weight: bold;
+  color: var(--primary-purple);
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.suggested-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.suggested-action {
+  padding: 12px;
+  background: var(--background-white);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+.suggested-action.requires-approval {
+  border-left: 4px solid #f39c12;
+  background: #fefcf8;
+}
+
+.suggested-action.auto-execute {
+  border-left: 4px solid var(--secondary-teal);
+}
+
+.action-description {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.action-type {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.approve-btn {
+  background: var(--secondary-teal);
+  color: white;
+}
+
+.approve-btn:hover {
+  background: #5f7d75;
+}
+
+.reject-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.reject-btn:hover {
+  background: #c0392b;
+}
+
+.modify-btn {
+  background: var(--primary-purple);
+  color: white;
+}
+
+.modify-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.action-status {
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.action-status.approved {
+  background: var(--secondary-teal);
+  color: white;
+}
+
+.action-status.rejected {
+  background: #e74c3c;
+  color: white;
+}
+
+/* אינדיקטור AI במערכת */
+.ai-indicator {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 6px;
+  background: var(--secondary-teal);
+  color: white;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: help;
+}
+
+.ai-indicator.active {
+  background: var(--secondary-teal);
+  animation: pulse-ai 2s infinite;
+}
+
+@keyframes pulse-ai {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* פעולות ממתינות */
+.all-pending-actions {
+  background: var(--background-cards);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid var(--border-light);
+}
+
+.all-pending-actions h3 {
+  margin-top: 0;
+  color: var(--primary-purple);
+}
+
+.pending-action-item {
+  padding: 10px;
+  margin: 8px 0;
+  background: var(--background-white);
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+}
+
+.action-header {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.action-details {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.action-buttons-inline {
+  display: flex;
+  gap: 6px;
+}
+
+.btn.btn-small {
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 3px;
+}
+
+.btn.approve {
+  background: var(--secondary-teal);
+  color: white;
+  border: none;
+}
+
+.btn.reject {
+  background: #e74c3c;
+  color: white;
+  border: none;
+}
+
+/* כפתורי פעולה מהירה */
+.quick-action-button {
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--primary-purple);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 5px 0;
+  transition: all 0.2s ease;
+}
+
+.quick-action-button:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* שיפורים לצ'אט */
+.message.ai-message.typing .message-content {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* עיבוד מסמכים */
+.document-upload-area {
+  border: 2px dashed var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: var(--background-cards);
+  transition: all 0.2s ease;
+}
+
+.document-upload-area:hover {
+  border-color: var(--primary-purple);
+  background: var(--hover-color);
+}
+
+.document-upload-area.dragover {
+  border-color: var(--secondary-teal);
+  background: rgba(117,150,140,0.1);
+}
+
+/* התראות מתקדמות */
+.notification.ai-notification {
+  border-left: 4px solid var(--secondary-teal);
+  background: rgba(117,150,140,0.1);
+}
+
+.notification.pending-actions {
+  border-left: 4px solid #f39c12;
+  background: rgba(243,156,18,0.1);
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .quick-add-input-group {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    justify-content: space-between;
+  }
+  
+  .suggested-actions {
+    gap: 8px;
+  }
+}

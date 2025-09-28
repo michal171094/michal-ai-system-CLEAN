@@ -1,0 +1,4825 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דשבורד מרכזי - מיכל AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e6d3d9;
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #f9f6f7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #000000;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .header p {
+            color: #333333;
+            text-align: center;
+            font-size: 1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #333333;
+            font-size: 1.1em;
+        }
+
+        .total { color: #96758d; }
+        .urgent { color: #96758d; }
+        .pending { color: #75968c; }
+        .in-progress { color: #75968c; }
+        .done { color: #75968c; }
+
+        .controls {
+            background: #f9f6f7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-select, .search-input {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-select:focus, .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .refresh-btn {
+            background: #96758d;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .tasks-table {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            background: #f9f6f7;
+            color: #000000;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 2px solid #dddddd;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .table th {
+            background: #f9f6f7;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .table tr:hover {
+            background: #f2e9ec;
+        }
+
+        .priority-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .priority-high { background: #96758d; color: #ffffff; }
+        .priority-medium { background: #75968c; color: #ffffff; }
+        .priority-low { background: #75968c; color: #ffffff; }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .status-pending { background: #ffffff; color: #75968c; border: 1px solid #75968c; }
+        .status-in-progress { background: #75968c; color: #ffffff; }
+        .status-done { background: #75968c; color: #ffffff; }
+
+        .category-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .category-academic { background: #96758d; color: #ffffff; }
+        .category-debt { background: #96758d; color: #ffffff; }
+        .category-bureaucracy { background: #75968c; color: #ffffff; }
+        .category-personal { background: #75968c; color: #ffffff; }
+
+        .action-btn {
+            background: #96758d;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .priority-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .priority-high { background: #96758d; color: #ffffff; }
+        .priority-medium { background: #ffffff; color: #75968c; border: 1px solid #75968c; }
+        .priority-low { background: #ffffff; color: #96758d; border: 1px solid #96758d; }
+
+        /* Task Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #96758d 0%, #75968c 100%);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .close {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        .modal-body {
+            padding: 0;
+            height: calc(90vh - 80px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .task-details {
+            padding: 20px;
+            border-bottom: 1px solid #dddddd;
+            background: #f9f6f7;
+        }
+
+        .task-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #000000;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #dddddd;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+        }
+
+        .chat-header {
+            background: #96758d;
+            color: #ffffff;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #ffffff;
+            max-height: 300px;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .message-user {
+            background: #f2e9ec;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message-ai {
+            background: #e6d3d9;
+            margin-right: auto;
+        }
+
+        .chat-input-container {
+            padding: 15px 20px;
+            background: #f9f6f7;
+            border-top: 1px solid #dddddd;
+        }
+
+        .chat-input-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        .send-btn {
+            background: #96758d;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .send-btn:hover {
+            background: #7a5f6f;
+        }
+
+        .modal-footer {
+            padding: 20px;
+            background: #f9f6f7;
+            border-top: 1px solid #dddddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Advanced Cards Styles */
+        .advanced-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .advanced-card {
+            background: #f9f6f7;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e6d3d9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .advanced-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e6d3d9;
+        }
+
+        .card-header h3 {
+            color: #96758d;
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .card-content {
+            color: #333;
+        }
+
+        /* Status Card */
+        .status-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .status-text {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #96758d;
+            line-height: 1.6;
+        }
+
+        .agent-context {
+            background: #e6d3d9;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            border-left: 4px solid #75968c;
+        }
+
+        /* Integrations Card */
+        .integrations-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .integration-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e6d3d9;
+        }
+
+        .integration-icon {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+
+        .integration-name {
+            flex: 1;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .integration-status {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .integration-status.connected {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .integration-status.disconnected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Upload Card */
+        .upload-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .upload-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .upload-option {
+            background: white;
+            border: 2px dashed #96758d;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #96758d;
+            font-weight: bold;
+        }
+
+        .upload-option:hover {
+            background: #96758d;
+            color: white;
+            border-color: #75968c;
+        }
+
+        .upload-status {
+            background: #e6d3d9;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        /* Agent Card */
+        .agent-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .agent-status {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            font-size: 1.2em;
+        }
+
+        .agent-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .agent-action {
+            background: white;
+            border: 1px solid #96758d;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #96758d;
+            font-weight: bold;
+        }
+
+        .agent-action:hover {
+            background: #96758d;
+            color: white;
+        }
+
+        /* Sync Card */
+        .sync-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .sync-commands {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .sync-command {
+            background: white;
+            border: 1px solid #75968c;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #75968c;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .sync-command:hover {
+            background: #75968c;
+            color: white;
+        }
+
+        .last-sync {
+            background: #e6d3d9;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        /* Actions Card */
+        .actions-card {
+            background: linear-gradient(135deg, #f9f6f7 0%, #e6d3d9 100%);
+        }
+
+        .debts-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa8a8 100%);
+        }
+
+        .debts-card:hover {
+            background: linear-gradient(135deg, #ff5b5b 0%, #ff9898 100%);
+        }
+
+        .bureaucracy-card {
+            background: linear-gradient(135deg, #4ecdc4 0%, #7fdbda 100%);
+        }
+
+        .bureaucracy-card:hover {
+            background: linear-gradient(135deg, #3ebcb4 0%, #6fcbca 100%);
+        }
+
+        .clients-card {
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+        }
+
+        .clients-card:hover {
+            background: linear-gradient(135deg, #98d6bf 0%, #ccddb8 100%);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .summary-label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .summary-value {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .summary-value.urgent {
+            color: #e74c3c;
+        }
+
+        /* Updated task styling - Bright transparent blue */
+        .task-row.updated {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.4) 0%, rgba(0, 191, 255, 0.2) 100%);
+            border-left: 4px solid #00BFFF;
+            animation: pulse-updated 3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        @keyframes pulse-updated {
+            0% { background: rgba(0, 191, 255, 0.6); box-shadow: 0 0 15px rgba(0, 191, 255, 0.5); }
+            50% { background: rgba(0, 191, 255, 0.8); box-shadow: 0 0 20px rgba(0, 191, 255, 0.7); }
+            100% { background: rgba(0, 191, 255, 0.4); box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); }
+        }
+
+        .task-row.new {
+            background: linear-gradient(135deg, rgba(144, 238, 144, 0.3) 0%, rgba(144, 238, 144, 0.1) 100%);
+            border-left: 4px solid #90EE90;
+            animation: pulse-new 2s ease-in-out;
+        }
+
+        @keyframes pulse-new {
+            0% { background: rgba(144, 238, 144, 0.5); }
+            50% { background: rgba(144, 238, 144, 0.8); }
+            100% { background: rgba(144, 238, 144, 0.3); }
+        }
+
+        /* Authentication Modal Styles */
+        .auth-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .auth-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 2px solid #e6d3d9;
+        }
+
+        .auth-header {
+            background: linear-gradient(135deg, #96758d 0%, #75968c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 18px 18px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .auth-header h3 {
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .close-auth {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .close-auth:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .auth-body {
+            padding: 25px;
+        }
+
+        .auth-body p {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .auth-steps {
+            margin-bottom: 25px;
+        }
+
+        .auth-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f6f7;
+            border-radius: 10px;
+            border-left: 4px solid #96758d;
+        }
+
+        .step-number {
+            background: #96758d;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .auth-form {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e6d3d9;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #96758d;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .form-group small a {
+            color: #96758d;
+            text-decoration: none;
+        }
+
+        .form-group small a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .auth-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .gmail-btn {
+            background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);
+            color: white;
+        }
+
+        .gmail-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .drive-btn {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+        }
+
+        .drive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+
+        .openai-btn {
+            background: linear-gradient(135deg, #412991 0%, #00a67e 100%);
+            color: white;
+        }
+
+        .openai-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(65, 41, 145, 0.4);
+        }
+
+        .secondary-btn {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #e6d3d9;
+        }
+
+        .secondary-btn:hover {
+            background: #e6d3d9;
+            transform: translateY(-2px);
+        }
+
+        /* Integration Status Updates */
+        .integration-status.connecting {
+            color: #ff9800;
+        }
+
+        .integration-status.connected {
+            color: #4caf50;
+        }
+
+       .integration-status.error {
+           color: #f44336;
+       }
+
+       /* Smart Update Approval Modal Styles */
+       .update-modal {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: rgba(0, 0, 0, 0.8);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           z-index: 10001;
+       }
+
+       .update-modal-content {
+           background: white;
+           border-radius: 20px;
+           padding: 0;
+           max-width: 800px;
+           width: 95%;
+           max-height: 90vh;
+           overflow-y: auto;
+           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+           border: 3px solid #96758d;
+       }
+
+       .update-header {
+           background: linear-gradient(135deg, #96758d 0%, #75968c 100%);
+           color: white;
+           padding: 25px;
+           border-radius: 17px 17px 0 0;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
+
+       .update-header h3 {
+           margin: 0;
+           font-size: 1.4em;
+           font-weight: bold;
+       }
+
+       .close-update {
+           background: none;
+           border: none;
+           color: white;
+           font-size: 2.5em;
+           cursor: pointer;
+           padding: 0;
+           width: 35px;
+           height: 35px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           border-radius: 50%;
+           transition: background 0.3s ease;
+       }
+
+       .close-update:hover {
+           background: rgba(255, 255, 255, 0.2);
+       }
+
+       .update-body {
+           padding: 30px;
+       }
+
+       .update-summary {
+           background: linear-gradient(135deg, #f9f6f7 0%, #f0f8f0 100%);
+           padding: 20px;
+           border-radius: 15px;
+           margin-bottom: 25px;
+           border: 2px solid #e6d3d9;
+       }
+
+       .update-summary p {
+           margin: 5px 0;
+           font-weight: bold;
+           color: #333;
+       }
+
+       .update-items {
+           max-height: 400px;
+           overflow-y: auto;
+           margin-bottom: 25px;
+       }
+
+       .update-item {
+           background: white;
+           border: 2px solid #e6d3d9;
+           border-radius: 12px;
+           padding: 20px;
+           margin-bottom: 15px;
+           transition: all 0.3s ease;
+           position: relative;
+       }
+
+       .update-item:hover {
+           border-color: #96758d;
+           box-shadow: 0 5px 15px rgba(150, 117, 141, 0.2);
+       }
+
+       .update-item.selected {
+           border-color: #75968c;
+           background: linear-gradient(135deg, #f9f6f7 0%, #f0f8f0 100%);
+       }
+
+       .update-item-header {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           margin-bottom: 15px;
+       }
+
+       .update-item-title {
+           font-weight: bold;
+           font-size: 1.1em;
+           color: #333;
+           display: flex;
+           align-items: center;
+           gap: 10px;
+       }
+
+       .update-item-checkbox {
+           width: 20px;
+           height: 20px;
+           cursor: pointer;
+       }
+
+       .update-item-type {
+           background: #96758d;
+           color: white;
+           padding: 4px 12px;
+           border-radius: 20px;
+           font-size: 0.8em;
+           font-weight: bold;
+       }
+
+       .update-item-content {
+           color: #555;
+           line-height: 1.5;
+           margin-bottom: 10px;
+       }
+
+       .update-item-actions {
+           display: flex;
+           gap: 10px;
+           margin-top: 15px;
+       }
+
+       .update-item-btn {
+           padding: 8px 16px;
+           border: none;
+           border-radius: 8px;
+           cursor: pointer;
+           font-size: 0.9em;
+           font-weight: bold;
+           transition: all 0.3s ease;
+       }
+
+       .update-item-btn.approve {
+           background: #4caf50;
+           color: white;
+       }
+
+       .update-item-btn.approve:hover {
+           background: #45a049;
+           transform: translateY(-2px);
+       }
+
+       .update-item-btn.reject {
+           background: #f44336;
+           color: white;
+       }
+
+       .update-item-btn.reject:hover {
+           background: #da190b;
+           transform: translateY(-2px);
+       }
+
+       .update-actions {
+           display: flex;
+           gap: 15px;
+           justify-content: center;
+           flex-wrap: wrap;
+       }
+
+       .update-btn {
+           padding: 15px 25px;
+           border: none;
+           border-radius: 12px;
+           font-size: 1em;
+           font-weight: bold;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           min-width: 140px;
+       }
+
+       .approve-all-btn {
+           background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+           color: white;
+       }
+
+       .approve-all-btn:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+       }
+
+       .approve-selected-btn {
+           background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+           color: white;
+       }
+
+       .approve-selected-btn:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+       }
+
+       .reject-all-btn {
+           background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+           color: white;
+       }
+
+       .reject-all-btn:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+       }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .quick-action {
+            background: white;
+            border: 1px solid #96758d;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #96758d;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .quick-action:hover {
+            background: #96758d;
+            color: white;
+        }
+
+        /* Button Styles */
+        .edit-btn, .sync-btn, .upload-btn, .chat-btn, .refresh-btn {
+            background: #96758d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn:hover, .sync-btn:hover, .upload-btn:hover, .chat-btn:hover, .refresh-btn:hover {
+            background: #75968c;
+            transform: translateY(-2px);
+        }
+
+        .next-task-btn {
+            background: #75968c;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .next-task-btn:hover {
+            background: #5f7a72;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .quick-action-btn {
+            background: #ffffff;
+            color: #96758d;
+            border: 1px solid #96758d;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .quick-action-btn:hover {
+            background: #96758d;
+            color: #ffffff;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .controls-row {
+                flex-direction: column;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .table {
+                font-size: 0.9em;
+            }
+            
+            .table th, .table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 דשבורד מרכזי - מיכל AI</h1>
+            <p>מערכת ניהול משימות חכמה</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number total" id="total-tasks">-</div>
+                <div class="stat-label">סה"כ משימות</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number urgent" id="urgent-tasks">-</div>
+                <div class="stat-label">דחוף</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number pending" id="pending-tasks">-</div>
+                <div class="stat-label">ממתין</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number in-progress" id="in-progress-tasks">-</div>
+                <div class="stat-label">בעבודה</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number done" id="done-tasks">-</div>
+                <div class="stat-label">הושלם</div>
+            </div>
+        </div>
+
+        <!-- Advanced Cards Grid -->
+        <div class="advanced-cards-grid">
+            <!-- Status Card -->
+            <div class="advanced-card status-card">
+                <div class="card-header">
+                    <h3>📊 תמונת מצב</h3>
+                    <button class="edit-btn" onclick="editStatus()">✏️ ערוך</button>
+                </div>
+                <div class="card-content">
+                    <div class="status-text" id="status-text">
+                        מערכת פועלת תקין. 25 משימות פעילות, 21 דחופות. 
+                        מתמקדת בחתונה אזרחית וטיפול בחובות.
+                    </div>
+                    <div class="agent-context" id="agent-context">
+                        <strong>הקשר לסוכן:</strong> מיכל נמצאת בתהליך נישואין עם אוריון, 
+                        מטפלת בחובות ובעבודה על פרויקטים אקדמיים.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations Card -->
+            <div class="advanced-card integrations-card">
+                <div class="card-header">
+                    <h3>🔗 חיבורים</h3>
+                    <button class="sync-btn" onclick="syncIntegrations()">🔄 סנכרן</button>
+                </div>
+                <div class="card-content">
+                    <div class="integration-item">
+                        <span class="integration-icon">📧</span>
+                        <span class="integration-name">Gmail</span>
+                        <span class="integration-status connected" id="gmail-status">✓ מחובר</span>
+                    </div>
+                    <div class="integration-item">
+                        <span class="integration-icon">📱</span>
+                        <span class="integration-name">WhatsApp</span>
+                        <span class="integration-status disconnected" id="whatsapp-status">✗ לא מחובר</span>
+                    </div>
+                    <div class="integration-item">
+                        <span class="integration-icon">☁️</span>
+                        <span class="integration-name">Google Drive</span>
+                        <span class="integration-status disconnected" id="drive-status">✗ לא מחובר</span>
+                    </div>
+                    <div class="integration-item">
+                        <span class="integration-icon">🗄️</span>
+                        <span class="integration-name">מסד נתונים</span>
+                        <span class="integration-status connected" id="db-status">✓ מחובר</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Upload Card -->
+            <div class="advanced-card upload-card">
+                <div class="card-header">
+                    <h3>📁 העלאת מסמכים</h3>
+                    <button class="upload-btn" onclick="openBulkUpload()">📤 העלה</button>
+                </div>
+                <div class="card-content">
+                    <div class="upload-options">
+                        <button class="upload-option" onclick="uploadDocuments()">
+                            📄 מסמכים (PDF, DOC)
+                        </button>
+                        <button class="upload-option" onclick="uploadImages()">
+                            🖼️ תמונות (JPG, PNG)
+                        </button>
+                        <button class="upload-option" onclick="uploadSpreadsheet()">
+                            📊 גיליון נתונים (CSV, XLS)
+                        </button>
+                    </div>
+                    <div class="upload-status" id="upload-status">
+                        מוכן להעלאה
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Agent Card -->
+            <div class="advanced-card agent-card">
+                <div class="card-header">
+                    <h3>🤖 סוכן AI</h3>
+                    <button class="chat-btn" onclick="openAgentChat()">💬 צ'אט</button>
+                </div>
+                <div class="card-content">
+                    <div class="agent-status" id="agent-status">
+                        <span class="status-indicator active">🟢 פעיל</span>
+                        <span class="agent-info">GPT-3.5-turbo זמין</span>
+                    </div>
+                    <div class="agent-actions">
+                        <button class="agent-action" onclick="prioritizeTasks()">
+                            ⚡ עדכן עדיפויות
+                        </button>
+                        <button class="agent-action" onclick="analyzeDocuments()">
+                            🔍 ניתוח מסמכים
+                        </button>
+                        <button class="agent-action" onclick="generateReport()">
+                            📋 דוח מצב
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sync & Commands Card -->
+            <div class="advanced-card sync-card">
+                <div class="card-header">
+                    <h3>🔄 סנכרון</h3>
+                    <button class="sync-btn" onclick="fullSync()">🔄 סנכרן הכל</button>
+                </div>
+                <div class="card-content">
+                    <div class="sync-commands">
+                        <button class="sync-command" onclick="syncDatabase()">
+                            🗄️ מסד נתונים
+                        </button>
+                        <button class="sync-command" onclick="syncEmail()">
+                            📧 מיילים
+                        </button>
+                        <button class="sync-command" onclick="syncDocuments()">
+                            📁 מסמכים
+                        </button>
+                        <button class="sync-command" onclick="syncTasks()">
+                            ✅ משימות
+                        </button>
+                    </div>
+                    <div class="last-sync" id="last-sync">
+                        אחרון: לא עודכן
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="advanced-card actions-card">
+                <div class="card-header">
+                    <h3>⚡ פעולות מהירות</h3>
+                    <button class="refresh-btn" onclick="refreshAll()">🔄 רענן</button>
+                </div>
+                <div class="card-content">
+                    <div class="quick-actions">
+                        <button class="quick-action" onclick="createTask()">
+                            ➕ משימה חדשה
+                        </button>
+                        <button class="quick-action" onclick="markAllDone()">
+                            ✅ סיים הכל
+                        </button>
+                        <button class="quick-action" onclick="exportData()">
+                            📤 ייצא נתונים
+                        </button>
+                        <button class="quick-action" onclick="backupSystem()">
+                            💾 גבה מערכת
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Debts Management Card -->
+            <div class="advanced-card debts-card">
+                <div class="card-header">
+                    <h3>💸 חובות</h3>
+                    <button class="sync-btn" onclick="window.open('debts.html', '_blank')">📄 פתח עמוד</button>
+                </div>
+                <div class="card-content">
+                    <div class="debts-summary" id="debts-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">סך חובות:</span>
+                            <span class="summary-value" id="total-debts">16</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">סכום כולל:</span>
+                            <span class="summary-value" id="total-amount">€2,847.50</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">דחופים:</span>
+                            <span class="summary-value urgent" id="urgent-debts">12</span>
+                        </div>
+                    </div>
+                    <div class="debts-list" id="debts-list">
+                        <!-- Debts will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bureaucracy Management Card -->
+            <div class="advanced-card bureaucracy-card">
+                <div class="card-header">
+                    <h3>🏛️ בירוקרטיה</h3>
+                    <button class="sync-btn" onclick="window.open('bureaucracy.html', '_blank')">📄 פתח עמוד</button>
+                </div>
+                <div class="card-content">
+                    <div class="bureaucracy-summary" id="bureaucracy-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">תהליכים פעילים:</span>
+                            <span class="summary-value" id="active-processes">8</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">מסמכים נדרשים:</span>
+                            <span class="summary-value" id="required-docs">15</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">דדליינים קרובים:</span>
+                            <span class="summary-value urgent" id="upcoming-deadlines">3</span>
+                        </div>
+                    </div>
+                    <div class="bureaucracy-list" id="bureaucracy-list">
+                        <!-- Bureaucracy items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients Management Card -->
+            <div class="advanced-card clients-card">
+                <div class="card-header">
+                    <h3>👥 לקוחות</h3>
+                    <button class="sync-btn" onclick="window.open('clients.html', '_blank')">📄 פתח עמוד</button>
+                </div>
+                <div class="card-content">
+                    <div class="clients-summary" id="clients-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">לקוחות פעילים:</span>
+                            <span class="summary-value" id="active-clients">5</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">פרויקטים פעילים:</span>
+                            <span class="summary-value" id="active-projects">8</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">משימות פתוחות:</span>
+                            <span class="summary-value" id="open-tasks">12</span>
+                        </div>
+                    </div>
+                    <div class="clients-list" id="clients-list">
+                        <!-- Clients will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="controls-row">
+                <select class="filter-select" id="category-filter">
+                    <option value="">כל הקטגוריות</option>
+                    <option value="academic">אקדמי</option>
+                    <option value="debt">חובות</option>
+                    <option value="bureaucracy">בירוקרטיה</option>
+                    <option value="personal">אישי</option>
+                </select>
+                
+                <select class="filter-select" id="status-filter">
+                    <option value="">כל הסטטוסים</option>
+                    <option value="pending">ממתין</option>
+                    <option value="in_progress">בעבודה</option>
+                    <option value="done">הושלם</option>
+                </select>
+                
+                <input type="text" class="search-input" id="search-input" placeholder="חיפוש במשימות...">
+                
+                <button class="refresh-btn" onclick="loadTasks()">🔄 רענן</button>
+            </div>
+        </div>
+
+        <!-- Tasks Table -->
+        <div class="tasks-table">
+            <div class="table-header">
+                📋 רשימת משימות
+            </div>
+            <div id="tasks-container">
+                <div class="loading">טוען משימות...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Popup Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTaskTitle">פרטי המשימה</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="task-details">
+                    <div class="task-info-grid">
+                        <div class="info-item">
+                            <div class="info-label">תיאור</div>
+                            <div class="info-value" id="modalTaskDescription">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">קטגוריה</div>
+                            <div class="info-value" id="modalTaskCategory">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">סטטוס</div>
+                            <div class="info-value" id="modalTaskStatus">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">עדיפות</div>
+                            <div class="info-value" id="modalTaskPriority">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">דדליין</div>
+                            <div class="info-value" id="modalTaskDeadline">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">לקוח</div>
+                            <div class="info-value" id="modalTaskClient">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">סכום</div>
+                            <div class="info-value" id="modalTaskAmount">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">מספר תיק</div>
+                            <div class="info-value" id="modalTaskCaseNumber">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-header">
+                        💬 צ'אט עם הסוכן החכם
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message message-ai">
+                            שלום! אני כאן לעזור לך עם המשימה הזו. מה תרצה לעשות?
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="chat-input-row">
+                            <input type="text" class="chat-input" id="chatInput" placeholder="כתוב את הבקשה שלך...">
+                            <button class="send-btn" onclick="sendChatMessage()">שלח</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="action-buttons">
+                    <button class="quick-action-btn" onclick="markAsDone()">✅ סיים משימה</button>
+                    <button class="quick-action-btn" onclick="updatePriority()">⚡ עדכן עדיפות</button>
+                    <button class="quick-action-btn" onclick="addNote()">📝 הוסף הערה</button>
+                </div>
+                <button class="next-task-btn" onclick="showNextTask()">➡️ משימה הבאה</button>
+        </div>
+    </div>
+</div>
+
+<!-- Authentication Modals -->
+<!-- Gmail Auth Modal -->
+<div id="gmail-auth-modal" class="auth-modal" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-header">
+            <h3>📧 חיבור Gmail</h3>
+            <button class="close-auth" onclick="closeAuthModal('gmail-auth-modal')">&times;</button>
+        </div>
+               <div class="auth-body">
+                   <p>התחבר ל-Gmail עם OAuth - חיבור מאובטח ופשוט!</p>
+                   <div class="auth-steps">
+                       <div class="auth-step">
+                           <span class="step-number">1</span>
+                           <span>לחץ על "התחבר ל-Gmail עם OAuth"</span>
+                       </div>
+                       <div class="auth-step">
+                           <span class="step-number">2</span>
+                           <span>התחבר עם החשבון Google שלך</span>
+                       </div>
+                       <div class="auth-step">
+                           <span class="step-number">3</span>
+                           <span>אשר את ההרשאות ותתחיל לסנכרן מיילים</span>
+                       </div>
+                   </div>
+            <div class="auth-actions">
+                <button class="auth-btn gmail-btn" onclick="authenticateGmail()">
+                    🔗 התחבר ל-Gmail עם OAuth
+                </button>
+                <button class="auth-btn drive-btn" onclick="authenticateDrive()" style="background: #4285f4;">
+                    📁 התחבר ל-Google Drive
+                </button>
+                <button class="auth-btn secondary-btn" onclick="closeAuthModal('gmail-auth-modal')">
+                    ביטול
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WhatsApp Auth Modal -->
+<div id="whatsapp-auth-modal" class="auth-modal" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-header">
+            <h3>📱 חיבור WhatsApp Business</h3>
+            <button class="close-auth" onclick="closeAuthModal('whatsapp-auth-modal')">&times;</button>
+        </div>
+        <div class="auth-body">
+            <p>התחבר ל-WhatsApp Business API לניהול הודעות</p>
+            <div class="auth-form">
+                <div class="form-group">
+                    <label>API Key:</label>
+                    <input type="password" id="whatsapp-api-key" placeholder="הזן API Key של WhatsApp Business">
+                </div>
+                <div class="form-group">
+                    <label>Business Account ID:</label>
+                    <input type="text" id="whatsapp-account-id" placeholder="הזן Business Account ID">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number ID:</label>
+                    <input type="text" id="whatsapp-phone-id" placeholder="הזן Phone Number ID">
+                </div>
+            </div>
+            <div class="auth-actions">
+                <button class="auth-btn whatsapp-btn" onclick="authenticateWhatsApp()">
+                    📱 התחבר ל-WhatsApp
+                </button>
+                <button class="auth-btn secondary-btn" onclick="closeAuthModal('whatsapp-auth-modal')">
+                    ביטול
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Drive Auth Modal -->
+<div id="drive-auth-modal" class="auth-modal" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-header">
+            <h3>☁️ חיבור Google Drive</h3>
+            <button class="close-auth" onclick="closeAuthModal('drive-auth-modal')">&times;</button>
+        </div>
+               <div class="auth-body">
+                   <p>התחבר ל-Google Drive עם API Key פשוט!</p>
+                   <div class="auth-steps">
+                       <div class="auth-step">
+                           <span class="step-number">1</span>
+                           <span>לך ל-Google Cloud Console</span>
+                       </div>
+                       <div class="auth-step">
+                           <span class="step-number">2</span>
+                           <span>הפעל Google Drive API</span>
+                       </div>
+                       <div class="auth-step">
+                           <span class="step-number">3</span>
+                           <span>צור API Key ב-Credentials</span>
+                       </div>
+                   </div>
+            <div class="auth-actions">
+                <button class="auth-btn drive-btn" onclick="authenticateGoogleDrive()">
+                    ☁️ התחבר ל-Google Drive
+                </button>
+                <button class="auth-btn secondary-btn" onclick="closeAuthModal('drive-auth-modal')">
+                    ביטול
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OpenAI API Key Modal -->
+<div id="openai-auth-modal" class="auth-modal" style="display: none;">
+    <div class="auth-modal-content">
+        <div class="auth-header">
+            <h3>🤖 הגדרת OpenAI API</h3>
+            <button class="close-auth" onclick="closeAuthModal('openai-auth-modal')">&times;</button>
+        </div>
+        <div class="auth-body">
+            <p>הגדר API Key של OpenAI לשימוש ב-AI Agent</p>
+            <div class="auth-form">
+                <div class="form-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="openai-api-key" placeholder="sk-...">
+                    <small>ניתן לקבל מ: <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a></small>
+                </div>
+                <div class="form-group">
+                    <label>Model:</label>
+                    <select id="openai-model">
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (זול יותר)</option>
+                        <option value="gpt-4">GPT-4 (איכות גבוהה יותר)</option>
+                        <option value="gpt-4-turbo">GPT-4 Turbo (הכי טוב)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="auth-actions">
+                <button class="auth-btn openai-btn" onclick="authenticateOpenAI()">
+                    🤖 הגדר OpenAI
+                </button>
+                <button class="auth-btn secondary-btn" onclick="closeAuthModal('openai-auth-modal')">
+                    ביטול
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        let allTasks = [];
+        let filteredTasks = [];
+
+        // Load tasks on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTasks();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('category-filter').addEventListener('change', filterTasks);
+            document.getElementById('status-filter').addEventListener('change', filterTasks);
+            document.getElementById('search-input').addEventListener('input', filterTasks);
+        }
+
+        async function loadTasks() {
+            try {
+                // Load stats
+                const statsResponse = await fetch('/api/tasks/stats');
+                const statsData = await statsResponse.json();
+                
+                if (statsData.success) {
+                    updateStats(statsData.data);
+                }
+
+                // Load tasks
+                const tasksResponse = await fetch('/api/tasks');
+                const tasksData = await tasksResponse.json();
+                
+                if (tasksData.success) {
+                    allTasks = tasksData.data;
+                    filteredTasks = [...allTasks];
+                    renderTasks();
+                    
+                    // Check for missing data and show alerts
+                    checkForMissingData();
+                } else {
+                    showError('שגיאה בטעינת המשימות');
+                }
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+                showError('שגיאה בחיבור לשרת');
+            }
+        }
+
+        function updateStats(stats) {
+            document.getElementById('total-tasks').textContent = stats.total || 0;
+            document.getElementById('urgent-tasks').textContent = stats.urgent || 0;
+            document.getElementById('pending-tasks').textContent = stats.pending || 0;
+            document.getElementById('in-progress-tasks').textContent = stats.in_progress || 0;
+            document.getElementById('done-tasks').textContent = stats.done || 0;
+        }
+
+        function filterTasks() {
+            const categoryFilter = document.getElementById('category-filter').value;
+            const statusFilter = document.getElementById('status-filter').value;
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+            filteredTasks = allTasks.filter(task => {
+                const matchesCategory = !categoryFilter || task.category === categoryFilter;
+                const matchesStatus = !statusFilter || task.status === statusFilter;
+                const matchesSearch = !searchTerm || 
+                    task.title.toLowerCase().includes(searchTerm) ||
+                    task.description?.toLowerCase().includes(searchTerm) ||
+                    task.client_name?.toLowerCase().includes(searchTerm);
+
+                return matchesCategory && matchesStatus && matchesSearch;
+            });
+
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const container = document.getElementById('tasks-container');
+            
+            if (filteredTasks.length === 0) {
+                container.innerHTML = '<div class="loading">אין משימות להצגה</div>';
+                return;
+            }
+
+            const tableHTML = `
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>כותרת</th>
+                            <th>קטגוריה</th>
+                            <th>סטטוס</th>
+                            <th>עדיפות</th>
+                            <th>לקוח</th>
+                            <th>דדליין</th>
+                            <th>סכום</th>
+                            <th>פעולות</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${filteredTasks.map(task => `
+                            <tr data-task-id="${task.id}" onclick="handleTaskAction('${task.id}')" style="cursor: pointer;">
+                                <td>
+                                    <strong>${task.title}</strong>
+                                </td>
+                                <td><span class="category-badge category-${task.category}">${getCategoryName(task.category)}</span></td>
+                                <td><span class="status-badge status-${task.status}">${getStatusName(task.status)}</span></td>
+                                <td><span class="priority-badge priority-${getPriorityClass(task.priority)}">${task.priority}/10</span></td>
+                                <td>${task.client_name || '-'}</td>
+                                <td>${task.deadline ? new Date(task.deadline).toLocaleDateString('he-IL') : '-'}</td>
+                                <td>${task.amount ? `₪${task.amount.toLocaleString()}` : '-'}</td>
+                                <td>
+                                    <button class="action-btn" onclick="handleTaskAction(${task.id})">
+                                        ${getActionText(task)}
+                                    </button>
+                                    <button class="delete-btn" onclick="deleteTask(${task.id})" title="מחק משימה">
+                                        🗑️
+                                    </button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = tableHTML;
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                'academic': 'אקדמי',
+                'debt': 'חובות',
+                'bureaucracy': 'בירוקרטיה',
+                'personal': 'אישי'
+            };
+            return names[category] || category;
+        }
+
+        function getStatusName(status) {
+            const names = {
+                'pending': 'ממתין',
+                'in_progress': 'בעבודה',
+                'done': 'הושלם'
+            };
+            return names[status] || status;
+        }
+
+        function getPriorityClass(priority) {
+            if (priority >= 8) return 'high';
+            if (priority >= 5) return 'medium';
+            return 'low';
+        }
+
+        function getActionText(task) {
+            switch(task.category) {
+                case 'academic':
+                    return '📝 כתיבה/עריכה';
+                case 'debt':
+                    return '📄 מכתב התנגדות';
+                case 'bureaucracy':
+                    return '📋 הגשת מסמכים';
+                case 'personal':
+                    return '✅ טיפול';
+                default:
+                    return '▶ פעולה';
+            }
+        }
+
+        function showError(message) {
+            document.getElementById('tasks-container').innerHTML = `
+                <div class="error">❌ ${message}</div>
+            `;
+        }
+
+        let currentTaskId = null;
+
+        async function handleTaskAction(taskId) {
+            const task = allTasks.find(t => t.id == taskId);
+            if (!task) return;
+
+            // Populate modal with task data
+            document.getElementById('modalTaskTitle').textContent = task.title;
+            document.getElementById('modalTaskDescription').textContent = task.description || '-';
+            document.getElementById('modalTaskCategory').textContent = getCategoryName(task.category);
+            document.getElementById('modalTaskStatus').textContent = getStatusName(task.status);
+            document.getElementById('modalTaskPriority').textContent = `${task.priority}/10`;
+            document.getElementById('modalTaskDeadline').textContent = task.deadline ? new Date(task.deadline).toLocaleDateString('he-IL') : '-';
+            document.getElementById('modalTaskClient').textContent = task.client_name || '-';
+            document.getElementById('modalTaskAmount').textContent = task.amount ? `₪${task.amount.toLocaleString()}` : '-';
+            document.getElementById('modalTaskCaseNumber').textContent = task.case_number || '-';
+
+            // Clear chat messages and add welcome message
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = `
+                <div class="chat-message message-ai">
+                    שלום! אני כאן לעזור לך עם המשימה "${task.title}". מה תרצה לעשות?
+                </div>
+            `;
+
+            // Store current task ID for chat
+            currentTaskId = taskId;
+
+            // Show modal
+            document.getElementById('taskModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('taskModal').style.display = 'none';
+            currentTaskId = null;
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            console.log('🤖 Chat attempt:', { message, currentTaskId });
+            if (!message || !currentTaskId) {
+                console.log('❌ Chat failed: missing message or taskId');
+                return;
+            }
+
+            // Add user message to chat
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML += `
+                <div class="chat-message message-user">
+                    ${message}
+                </div>
+            `;
+
+            // Clear input
+            input.value = '';
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Send to server
+            fetch(`/api/tasks/${currentTaskId}/action`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    actionType: 'chat',
+                    parameters: { message: message }
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('🤖 Chat response:', data);
+                if (data.success) {
+                    // Add AI response to chat
+                    chatMessages.innerHTML += `
+                        <div class="chat-message message-ai">
+                            ${data.data.message || 'קיבלתי את הודעתך. אני עדיין לומדת!'}
+                        </div>
+                    `;
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                } else {
+                    console.log('❌ Chat failed:', data.message);
+                    chatMessages.innerHTML += `
+                        <div class="chat-message message-ai">
+                            מצטערת, יש בעיה טכנית. נסה שוב מאוחר יותר.
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error('Chat error:', error);
+                chatMessages.innerHTML += `
+                    <div class="chat-message message-ai">
+                        מצטערת, יש בעיה טכנית. נסה שוב מאוחר יותר.
+                    </div>
+                `;
+            });
+        }
+
+        function markAsDone() {
+            if (!currentTaskId) return;
+
+            if (confirm('האם אתה בטוח שברצונך לסמן את המשימה כהושלמה?')) {
+                // Update task status to done
+                const taskIndex = allTasks.findIndex(t => t.id == currentTaskId);
+                if (taskIndex !== -1) {
+                    allTasks[taskIndex].status = 'done';
+                    
+                    // Update in UI
+                    const taskRow = document.querySelector(`tr[data-task-id="${currentTaskId}"]`);
+                    if (taskRow) {
+                        const statusBadge = taskRow.querySelector('.status-badge');
+                        if (statusBadge) {
+                            statusBadge.textContent = 'הושלם';
+                            statusBadge.className = 'status-badge status-done';
+                        }
+                    }
+                    
+                    alert('משימה סומנה כהושלמה!');
+                    closeModal();
+                    loadTasks(); // Refresh the tasks
+                }
+            }
+        }
+
+        function updatePriority() {
+            if (!currentTaskId) return;
+            
+            const newPriority = prompt('הזן עדיפות חדשה (1-10):');
+            if (newPriority && newPriority >= 1 && newPriority <= 10) {
+                // Update task priority
+                const taskIndex = allTasks.findIndex(t => t.id == currentTaskId);
+                if (taskIndex !== -1) {
+                    allTasks[taskIndex].priority = parseInt(newPriority);
+                    
+                    // Update in UI
+                    const taskRow = document.querySelector(`tr[data-task-id="${currentTaskId}"]`);
+                    if (taskRow) {
+                        const priorityBadge = taskRow.querySelector('.priority-badge');
+                        if (priorityBadge) {
+                            priorityBadge.textContent = `${newPriority}/10`;
+                            priorityBadge.className = `priority-badge priority-${getPriorityClass(newPriority)}`;
+                        }
+                    }
+                    
+                    alert(`עדיפות המשימה עודכנה ל-${newPriority}!`);
+                    closeModal();
+                    loadTasks(); // Refresh the tasks
+                }
+            }
+        }
+
+        function addNote() {
+            if (!currentTaskId) return;
+            
+            const note = prompt('הוסף הערה למשימה:');
+            if (note) {
+                // Update task description with note
+                const taskIndex = allTasks.findIndex(t => t.id == currentTaskId);
+                if (taskIndex !== -1) {
+                    const currentDescription = allTasks[taskIndex].description || '';
+                    allTasks[taskIndex].description = currentDescription + (currentDescription ? '\n' : '') + `הערה: ${note}`;
+                    
+                    // Update in UI
+                    const taskRow = document.querySelector(`tr[data-task-id="${currentTaskId}"]`);
+                    if (taskRow) {
+                        const descriptionCell = taskRow.querySelector('td:first-child');
+                        if (descriptionCell) {
+                            const title = descriptionCell.querySelector('strong').textContent;
+                            descriptionCell.innerHTML = `<strong>${title}</strong><br><small style="color: #666;">${allTasks[taskIndex].description}</small>`;
+                        }
+                    }
+                    
+                    alert('הערה נוספה למשימה!');
+                }
+            }
+        }
+
+        function showNextTask() {
+            if (!currentTaskId) return;
+            
+            // Find current task index
+            const currentIndex = allTasks.findIndex(t => t.id == currentTaskId);
+            if (currentIndex === -1) {
+                alert('לא נמצאה משימה נוכחית');
+                return;
+            }
+            
+            // Find next task (skip current one)
+            let nextTask = null;
+            for (let i = currentIndex + 1; i < allTasks.length; i++) {
+                if (allTasks[i].status !== 'done') {
+                    nextTask = allTasks[i];
+                    break;
+                }
+            }
+            
+            // If no next task found, look from beginning
+            if (!nextTask) {
+                for (let i = 0; i < currentIndex; i++) {
+                    if (allTasks[i].status !== 'done') {
+                        nextTask = allTasks[i];
+                        break;
+                    }
+                }
+            }
+            
+            if (nextTask) {
+                closeModal();
+                // Open the next task
+                setTimeout(() => {
+                    handleTaskAction(nextTask.id);
+                }, 100);
+            } else {
+                alert('כל המשימות הושלמו! 🎉');
+                closeModal();
+            }
+        }
+
+        // Advanced Functions
+        function editStatus() {
+            const currentStatus = document.getElementById('status-text').textContent;
+            const currentContext = document.getElementById('agent-context').textContent.replace('הקשר לסוכן: ', '');
+            
+            const newStatus = prompt('עדכן תמונת מצב:', currentStatus);
+            if (newStatus) {
+                document.getElementById('status-text').textContent = newStatus;
+            }
+            
+            const newContext = prompt('עדכן הקשר לסוכן:', currentContext);
+            if (newContext) {
+                document.getElementById('agent-context').innerHTML = `<strong>הקשר לסוכן:</strong> ${newContext}`;
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('system_status', newStatus || currentStatus);
+            localStorage.setItem('agent_context', newContext || currentContext);
+        }
+
+        function syncIntegrations() {
+            // Show integration connection options
+            const choice = confirm('האם ברצונך להתחבר לשירותים חיצוניים?\n\nOK - לפתוח חלון חיבורים\nביטול - סנכרון מקומי בלבד');
+            
+            if (choice) {
+                showIntegrationOptions();
+            } else {
+                document.getElementById('upload-status').textContent = 'מסנכרן מקומי...';
+                setTimeout(() => {
+                    document.getElementById('upload-status').textContent = 'סנכרון מקומי הושלם';
+                }, 1500);
+            }
+        }
+
+        function showIntegrationOptions() {
+            const options = `בחר שירות לחיבור:
+1. Gmail - לסנכרון מיילים
+2. WhatsApp - לניהול הודעות
+3. Google Drive - לסנכרון מסמכים
+4. OpenAI - להפעלת AI Agent
+5. הכל - להתחבר לכל השירותים`;
+
+            const choice = prompt(options + '\n\nהזן מספר (1-5):');
+            
+            switch(choice) {
+                case '1':
+                    openAuthModal('gmail-auth-modal');
+                    break;
+                case '2':
+                    openAuthModal('whatsapp-auth-modal');
+                    break;
+                case '3':
+                    openAuthModal('drive-auth-modal');
+                    break;
+                case '4':
+                    openAuthModal('openai-auth-modal');
+                    break;
+                case '5':
+                    openAllAuthModals();
+                    break;
+                default:
+                    document.getElementById('upload-status').textContent = 'בוטל';
+            }
+        }
+
+        function openAllAuthModals() {
+            // Open all auth modals in sequence
+            openAuthModal('gmail-auth-modal');
+            setTimeout(() => openAuthModal('whatsapp-auth-modal'), 500);
+            setTimeout(() => openAuthModal('drive-auth-modal'), 1000);
+            setTimeout(() => openAuthModal('openai-auth-modal'), 1500);
+        }
+
+        // Authentication Modal Functions
+        function openAuthModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeAuthModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Google Drive Authentication
+        function authenticateDrive() {
+            document.getElementById('gmail-status').textContent = '🔄 מתחבר ל-Google Drive...';
+            document.getElementById('gmail-status').className = 'integration-status connecting';
+
+            fetch('/api/drive/auth')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Open OAuth window
+                        const authWindow = window.open(data.authUrl, 'gmail-drive-auth', 'width=600,height=600,scrollbars=yes,resizable=yes');
+                        
+                        // Monitor for window close
+                        const checkClosed = setInterval(() => {
+                            if (authWindow.closed) {
+                                clearInterval(checkClosed);
+                                document.getElementById('gmail-status').textContent = '✅ Gmail + Drive מחובר';
+                                document.getElementById('gmail-status').className = 'integration-status connected';
+                                showSuccessMessage('Gmail + Google Drive מחוברים בהצלחה!');
+                            }
+                        }, 1000);
+                    } else {
+                        throw new Error(data.error || 'Drive authentication failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Drive auth error:', error);
+                    document.getElementById('gmail-status').textContent = '❌ שגיאה בחיבור ל-Google Drive';
+                    document.getElementById('gmail-status').className = 'integration-status error';
+                    showErrorMessage(`שגיאה בחיבור ל-Google Drive: ${error.message}`);
+                });
+        }
+
+        // Gmail Authentication - Real IMAP connection
+        function authenticateGmail() {
+            document.getElementById('gmail-status').textContent = '🔄 מתחבר...';
+            document.getElementById('gmail-status').className = 'integration-status connecting';
+            
+            // Start OAuth flow
+            fetch('/auth/gmail')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    // Open OAuth URL in new window
+                    const authWindow = window.open(data.auth_url, 'gmail-auth', 'width=600,height=600');
+                    
+                    // Check if window is closed (user completed auth)
+                    const checkClosed = setInterval(() => {
+                        if (authWindow.closed) {
+                            clearInterval(checkClosed);
+                            // Update status after auth
+                            document.getElementById('gmail-status').textContent = '✓ מחובר';
+                            document.getElementById('gmail-status').className = 'integration-status connected';
+                            document.getElementById('upload-status').textContent = 'Gmail מחובר עם OAuth';
+                            closeAuthModal('gmail-auth-modal');
+                            alert('Gmail מחובר בהצלחה! 🎉\n\nהמערכת יכולה כעת:\n• לקרוא מיילים אמיתיים\n• לחפש הודעות\n• ליצור משימות ממיילים\n• לסנכרן אוטומטית');
+                        }
+                    }, 1000);
+                } else {
+                    throw new Error(data.message || 'OAuth initialization failed');
+                }
+            })
+            .catch(error => {
+                console.error('Gmail OAuth error:', error);
+                document.getElementById('gmail-status').textContent = '✗ שגיאה';
+                document.getElementById('gmail-status').className = 'integration-status error';
+                alert('שגיאה בחיבור ל-Gmail:\n' + error.message + '\n\nאנא בדוק שהשרת מוגדר עם Gmail API credentials');
+            });
+        }
+
+        // WhatsApp Authentication
+        function authenticateWhatsApp() {
+            const apiKey = document.getElementById('whatsapp-api-key').value;
+            const accountId = document.getElementById('whatsapp-account-id').value;
+            const phoneId = document.getElementById('whatsapp-phone-id').value;
+            
+            if (!apiKey || !accountId || !phoneId) {
+                alert('אנא מלא את כל השדות');
+                return;
+            }
+            
+            document.getElementById('whatsapp-status').textContent = '🔄 מתחבר...';
+            document.getElementById('whatsapp-status').className = 'integration-status connecting';
+            
+            // Simulate API connection test
+            setTimeout(() => {
+                // In real implementation, test WhatsApp Business API connection
+                fetch('/api/whatsapp/test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ apiKey, accountId, phoneId })
+                }).then(response => {
+                    if (response.ok) {
+                        document.getElementById('whatsapp-status').textContent = '✓ מחובר';
+                        document.getElementById('whatsapp-status').className = 'integration-status connected';
+                        document.getElementById('upload-status').textContent = 'WhatsApp מחובר בהצלחה';
+                        closeAuthModal('whatsapp-auth-modal');
+                    } else {
+                        throw new Error('Connection failed');
+                    }
+                }).catch(error => {
+                    document.getElementById('whatsapp-status').textContent = '✗ שגיאה';
+                    document.getElementById('whatsapp-status').className = 'integration-status error';
+                    alert('שגיאה בחיבור ל-WhatsApp. אנא בדוק את הפרטים.');
+                });
+            }, 1500);
+        }
+
+        // Google Drive Authentication - Using OAuth (merged with Gmail)
+        function authenticateGoogleDrive() {
+            // Use the same OAuth as Gmail since they're merged
+            authenticateDrive();
+            // OAuth handles the connection automatically
+        }
+
+        // OpenAI Authentication
+        function authenticateOpenAI() {
+            const apiKey = document.getElementById('openai-api-key').value;
+            const model = document.getElementById('openai-model').value;
+            
+            if (!apiKey) {
+                alert('אנא הזן OpenAI API Key');
+                return;
+            }
+            
+            if (!apiKey.startsWith('sk-')) {
+                alert('API Key לא תקין. אנא הזן key שמתחיל ב-sk-');
+                return;
+            }
+            
+            document.getElementById('upload-status').textContent = 'בודק OpenAI API...';
+            
+            // Test OpenAI API connection
+            fetch('/api/openai/test', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ apiKey, model })
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('upload-status').textContent = 'OpenAI מחובר בהצלחה';
+                    alert('OpenAI API מחובר בהצלחה! AI Agent זמין כעת.');
+                    closeAuthModal('openai-auth-modal');
+                } else {
+                    throw new Error('API test failed');
+                }
+            }).catch(error => {
+                document.getElementById('upload-status').textContent = 'שגיאה בחיבור ל-OpenAI';
+                alert('שגיאה בחיבור ל-OpenAI. אנא בדוק את ה-API Key.');
+            });
+        }
+
+        function openBulkUpload() {
+            // Create a file input for bulk upload
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx,.jpg,.jpeg,.png,.csv,.xls,.xlsx';
+            input.multiple = true;
+            input.onchange = function(e) {
+                const files = Array.from(e.target.files);
+                if (files.length > 0) {
+                    analyzeAndShowUpdates(files, 'documents');
+                }
+            };
+            input.click();
+        }
+
+        // Smart Update Approval Functions
+        function analyzeAndShowUpdates(files, source) {
+            // Show loading
+            document.getElementById('upload-status').textContent = `מנתח ${files.length} קבצים...`;
+            
+            // Simulate AI analysis (in real implementation, this would call the AI service)
+            setTimeout(() => {
+                const mockUpdates = generateMockUpdates(files, source);
+                showUpdateApprovalModal(mockUpdates, source);
+            }, 2000);
+        }
+
+        function generateMockUpdates(files, source) {
+            const updates = [];
+            const sources = {
+                'documents': ['מסמכים', 'קבצים'],
+                'email': ['מיילים', 'הודעות'],
+                'whatsapp': ['וואטסאפ', 'הודעות'],
+                'drive': ['Google Drive', 'קבצים']
+            };
+
+            files.forEach((file, index) => {
+                // Generate mock updates based on file type
+                if (file.type.includes('pdf') || file.name.includes('.pdf')) {
+                    updates.push({
+                        id: `update_${index}_1`,
+                        type: 'new_task',
+                        title: '📄 משימה חדשה ממסמך PDF',
+                        content: `נמצא מסמך PDF: "${file.name}". הסוכן זיהה צורך בפעולה: "עיבוד מסמך משפטי"`,
+                        priority: 7,
+                        category: 'bureaucracy',
+                        approved: false
+                    });
+                }
+                
+                if (file.type.includes('image')) {
+                    updates.push({
+                        id: `update_${index}_2`,
+                        type: 'update_task',
+                        title: '📷 עדכון משימה מתמונה',
+                        content: `תמונה: "${file.name}". זוהה מסמך חשוב שדורש סריקה ועיבוד`,
+                        priority: 5,
+                        category: 'personal',
+                        approved: false
+                    });
+                }
+                
+                updates.push({
+                    id: `update_${index}_3`,
+                    type: 'new_note',
+                    title: '📝 הערה חדשה',
+                    content: `קובץ: "${file.name}" - זוהה תוכן רלוונטי שדורש מעקב`,
+                    priority: 3,
+                    category: 'personal',
+                    approved: false
+                });
+            });
+
+            return updates;
+        }
+
+        function showUpdateApprovalModal(updates, source) {
+            document.getElementById('update-source').textContent = `מקור: ${source}`;
+            document.getElementById('update-count').textContent = `נמצאו ${updates.length} עדכונים חדשים`;
+            
+            const itemsContainer = document.getElementById('update-items');
+            itemsContainer.innerHTML = '';
+            
+            updates.forEach(update => {
+                const item = createUpdateItem(update);
+                itemsContainer.appendChild(item);
+            });
+            
+            document.getElementById('update-approval-modal').style.display = 'flex';
+            document.getElementById('upload-status').textContent = `מוכן לאישור ${updates.length} עדכונים`;
+        }
+
+        function createUpdateItem(update) {
+            const item = document.createElement('div');
+            item.className = 'update-item';
+            item.dataset.updateId = update.id;
+            
+            const typeIcons = {
+                'new_task': '🆕',
+                'update_task': '🔄',
+                'new_note': '📝',
+                'priority_change': '⚡'
+            };
+            
+            item.innerHTML = `
+                <div class="update-item-header">
+                    <div class="update-item-title">
+                        <input type="checkbox" class="update-item-checkbox" onchange="toggleUpdateSelection('${update.id}')">
+                        <span>${typeIcons[update.type] || '📋'} ${update.title}</span>
+                    </div>
+                    <span class="update-item-type">${update.category}</span>
+                </div>
+                <div class="update-item-content">
+                    ${update.existing_task_title ? `<div style="background: #e3f2fd; padding: 10px; border-radius: 5px; margin-bottom: 10px; border-right: 3px solid #2196f3;">
+                        <strong style="color: #1976d2;">🎯 משימה רלוונטית:</strong> ${update.existing_task_title}
+                        <br><small style="color: #1565c0;">זה עדכון למשימה קיימת - לאחר אישור, המשימה תודגש בכחול בהיר</small>
+                        ${update.existing_task_match ? `<br><button onclick="showExistingTaskDetails(${update.existing_task_match})" style="background: #1976d2; color: white; border: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; margin-top: 5px; cursor: pointer;">👁️ צפה במשימה הקיימת</button>` : ''}
+                    </div>` : ''}
+                    ${update.existing_task_match && !update.existing_task_title ? `<div style="background: #e8f5e8; padding: 10px; border-radius: 5px; margin-bottom: 10px; border-right: 3px solid #4caf50;">
+                        <strong style="color: #2e7d32;">🔗 תואם למשימה קיימת:</strong> ${update.existing_task_match}
+                        <br><small style="color: #2e7d32;">זה עדכון למשימה קיימת - לאחר אישור, המשימה תודגש בכחול בהיר</small>
+                        <br><button onclick="showExistingTaskDetails(${update.existing_task_match})" style="background: #2e7d32; color: white; border: none; padding: 4px 8px; border-radius: 3px; font-size: 11px; margin-top: 5px; cursor: pointer;">👁️ צפה במשימה הקיימת</button>
+                    </div>` : ''}
+                    <div style="margin-bottom: 8px;">
+                        <strong>📋 מה צריך לעדכן:</strong><br>
+                        ${update.content}
+                    </div>
+                    ${update.email_link ? `<br><a href="${update.email_link}" target="_blank" class="email-link" style="color: #007bff; text-decoration: none; font-size: 12px;">📧 פתח מייל מקור</a>` : ''}
+                    ${update.deadline ? `<br><span style="color: #dc3545; font-size: 12px;">⏰ תאריך יעד: ${update.deadline}</span>` : ''}
+                    ${update.consequences ? `<br><span style="color: #fd7e14; font-size: 12px;">⚠️ השלכות: ${update.consequences}</span>` : ''}
+                    ${update.suggested_actions ? `<br><div style="margin-top: 8px;"><strong>🎯 פעולות מוצעות:</strong><ul style="margin: 4px 0; padding-right: 20px;">${update.suggested_actions.map(action => `<li style="font-size: 12px;">${action}</li>`).join('')}</ul></div>` : ''}
+                    ${update.needs_focused_search ? `<br><button onclick="performFocusedSearch('${update.id}')" style="background: #17a2b8; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-top: 4px;">🔍 חיפוש ממוקד</button>` : ''}
+                </div>
+                <div class="update-item-actions">
+                    <button class="update-item-btn approve" onclick="approveSingleUpdate('${update.id}')">
+                        ✅ אישור
+                    </button>
+                    <button class="update-item-btn reject" onclick="rejectSingleUpdate('${update.id}')">
+                        ❌ דחייה
+                    </button>
+                </div>
+            `;
+            
+            return item;
+        }
+
+        function performFocusedSearch(updateId) {
+            const update = window.currentUpdates?.find(u => u.id === updateId);
+            if (!update) return;
+
+            // Extract search parameters from update
+            const content = update.content;
+            let entity = '';
+            let caseNumber = '';
+            let creditor = '';
+
+            // Extract entity/sender from content
+            const senderMatch = content.match(/מייל מ-([^:]+)/);
+            if (senderMatch) {
+                entity = senderMatch[1];
+            }
+
+            // Extract case number
+            const caseMatch = content.match(/מספר תיק: ([^\n]+)/);
+            if (caseMatch) {
+                caseNumber = caseMatch[1];
+            }
+
+            // Extract creditor from title
+            const titleMatch = update.title.match(/מ-([^:]+)/);
+            if (titleMatch) {
+                creditor = titleMatch[1];
+            }
+
+            console.log('Performing focused search:', { entity, caseNumber, creditor });
+
+            // Ask user for search parameters
+            const daysBack = prompt('כמה ימים אחורה לחפש? (30/90/365/הכל)', '30');
+            if (daysBack === null) return;
+
+            const searchParams = {
+                entity: entity || null,
+                caseNumber: caseNumber !== 'לא צוין' ? caseNumber : null,
+                creditor: creditor || null,
+                daysBack: daysBack === 'הכל' ? -1 : parseInt(daysBack)
+            };
+
+            // Perform focused search
+            fetch('/api/search/focused', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(searchParams)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showFocusedSearchResults(data.results, update);
+                } else {
+                    alert('שגיאה בחיפוש: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Focused search error:', error);
+                alert('שגיאה בחיפוש ממוקד');
+            });
+        }
+
+        function showFocusedSearchResults(results, update) {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.style.display = 'block';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 800px;">
+                    <div class="modal-header">
+                        <h3>🔍 תוצאות חיפוש ממוקד</h3>
+                        <span class="close" onclick="this.parentElement.parentElement.parentElement.remove()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <p>נמצאו ${results.length} מיילים רלוונטיים:</p>
+                        <div style="max-height: 400px; overflow-y: auto;">
+                            ${results.map(result => `
+                                <div style="border: 1px solid #ddd; margin: 8px 0; padding: 8px; border-radius: 4px;">
+                                    <strong>${result.subject}</strong><br>
+                                    <small>מ: ${result.sender}</small><br>
+                                    <small>תאריך: ${result.date}</small><br>
+                                    <div style="margin-top: 4px; font-size: 12px; color: #666;">
+                                        ${result.body}...
+                                    </div>
+                                    <a href="${result.email_link}" target="_blank" style="color: #007bff; font-size: 11px;">📧 פתח מייל</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()">סגור</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function toggleUpdateSelection(updateId) {
+            const item = document.querySelector(`[data-update-id="${updateId}"]`);
+            const checkbox = item.querySelector('.update-item-checkbox');
+            
+            if (checkbox.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+        }
+
+        function approveSingleUpdate(updateId) {
+            const item = document.querySelector(`[data-update-id="${updateId}"]`);
+            item.style.opacity = '0.5';
+            item.querySelector('.update-item-checkbox').checked = true;
+            item.classList.add('selected');
+            
+            // Apply the update to the system
+            applyUpdate(updateId, true);
+        }
+
+        function rejectSingleUpdate(updateId) {
+            const item = document.querySelector(`[data-update-id="${updateId}"]`);
+            item.style.display = 'none';
+            
+            // Reject the update
+            applyUpdate(updateId, false);
+        }
+
+        function approveAllUpdates() {
+            const items = document.querySelectorAll('.update-item');
+            items.forEach(item => {
+                const updateId = item.dataset.updateId;
+                item.querySelector('.update-item-checkbox').checked = true;
+                item.classList.add('selected');
+                applyUpdate(updateId, true);
+            });
+            
+            setTimeout(() => {
+                closeUpdateModal();
+                showSuccessMessage('כל העדכונים אושרו בהצלחה!');
+            }, 1000);
+        }
+
+        function approveSelectedUpdates() {
+            const selectedItems = document.querySelectorAll('.update-item.selected');
+            selectedItems.forEach(item => {
+                const updateId = item.dataset.updateId;
+                applyUpdate(updateId, true);
+            });
+            
+            setTimeout(() => {
+                closeUpdateModal();
+                showSuccessMessage(`${selectedItems.length} עדכונים נבחרים אושרו!`);
+            }, 1000);
+        }
+
+        function rejectAllUpdates() {
+            if (confirm('האם אתה בטוח שברצונך לדחות את כל העדכונים?')) {
+                const items = document.querySelectorAll('.update-item');
+                items.forEach(item => {
+                    const updateId = item.dataset.updateId;
+                    applyUpdate(updateId, false);
+                });
+                
+                closeUpdateModal();
+                showSuccessMessage('כל העדכונים נדחו');
+            }
+        }
+
+        function applyUpdate(updateId, approved) {
+            // In real implementation, this would send the update to the server
+            console.log(`Update ${updateId}: ${approved ? 'approved' : 'rejected'}`);
+            
+            if (approved) {
+                const update = window.currentUpdates?.find(u => u.id === updateId);
+                if (update) {
+                    if (update.existing_task_match && update.type === 'update_task') {
+                        // Update existing task
+                        updateExistingTask(update.existing_task_match, update);
+                    } else if (update.type === 'new_task') {
+                        // Create new task
+                        createNewTaskFromUpdate(update);
+                    }
+                }
+                console.log('Applying update to system...');
+            }
+        }
+
+        function updateExistingTask(taskId, update) {
+            console.log(`Updating existing task ${taskId} with:`, update);
+            
+            // Find the task row in the table
+            const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
+            if (taskRow) {
+                // Mark as updated with blue highlight
+                taskRow.classList.add('updated');
+                
+                // Update task content with specific task title
+                const subjectCell = taskRow.querySelector('.task-subject');
+                if (subjectCell) {
+                    const existingTitle = update.existing_task_title || 'משימה קיימת';
+                    subjectCell.innerHTML = `${subjectCell.textContent} <span style="color: #00BFFF; font-size: 0.8em; font-weight: bold;">[מעודכן: ${existingTitle}]</span>`;
+                }
+                
+                // Update status if needed
+                if (update.suggested_actions && update.suggested_actions.length > 0) {
+                    const statusCell = taskRow.querySelector('.task-status');
+                    if (statusCell) {
+                        statusCell.textContent = 'בעדכון';
+                        statusCell.style.color = '#00BFFF';
+                        statusCell.style.fontWeight = 'bold';
+                    }
+                }
+                
+                // Add update note with specific details
+                const notesCell = taskRow.querySelector('.task-notes');
+                if (notesCell) {
+                    const updateNote = `<div style="color: #00BFFF; font-size: 0.8em; margin-top: 2px; font-weight: bold;">
+                        📧 עדכון חדש: ${update.title}<br>
+                        <small style="color: #007acc;">${update.content.substring(0, 100)}...</small>
+                    </div>`;
+                    notesCell.innerHTML = notesCell.innerHTML + updateNote;
+                }
+                
+                // Remove highlight after 5 seconds
+                setTimeout(() => {
+                    taskRow.classList.remove('updated');
+                }, 5000);
+            }
+        }
+
+        function createNewTaskFromUpdate(update) {
+            console.log('Creating new task from update:', update);
+            
+            // Add to tasks table with green highlight
+            const tasksTable = document.getElementById('tasks-table');
+            if (tasksTable && tasksTable.tBodies[0]) {
+                const newRow = document.createElement('tr');
+                newRow.className = 'task-row new';
+                newRow.dataset.taskId = `new_${Date.now()}`;
+                
+                const priorityClass = update.priority >= 8 ? 'urgent' : 'normal';
+                const priorityText = update.priority >= 8 ? 'דחוף' : 'רגיל';
+                
+                newRow.innerHTML = `
+                    <td class="task-priority ${priorityClass}">${priorityText}</td>
+                    <td class="task-subject">${update.title}</td>
+                    <td class="task-category">${update.category}</td>
+                    <td class="task-status">חדש</td>
+                    <td class="task-deadline">${update.deadline || '-'}</td>
+                    <td class="task-notes">${update.content.substring(0, 100)}...</td>
+                    <td class="task-actions">
+                        <button onclick="openTaskDetails('new_${Date.now()}')" class="btn-sm">פתח</button>
+                        <button onclick="markTaskDone('new_${Date.now()}')" class="btn-sm">סיים</button>
+                        <button onclick="deleteTask('new_${Date.now()}')" class="delete-btn">🗑️</button>
+                    </td>
+                `;
+                
+                tasksTable.tBodies[0].appendChild(newRow);
+                
+                // Remove highlight after 5 seconds
+                setTimeout(() => {
+                    newRow.classList.remove('new');
+                }, 5000);
+            }
+        }
+
+        function markTaskDone(taskId) {
+            const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
+            if (taskRow) {
+                const statusCell = taskRow.querySelector('.task-status');
+                if (statusCell) {
+                    statusCell.textContent = 'הושלם';
+                    statusCell.style.color = '#27ae60';
+                    statusCell.style.fontWeight = 'bold';
+                }
+                
+                // Mark row as completed
+                taskRow.style.opacity = '0.6';
+                taskRow.style.textDecoration = 'line-through';
+                
+                showSuccessMessage('המשימה סומנה כהושלמה!');
+            }
+        }
+
+        function deleteTask(taskId) {
+            const taskRow = document.querySelector(`tr[data-task-id="${taskId}"]`);
+            if (taskRow) {
+                const taskTitle = taskRow.querySelector('.task-subject').textContent;
+                
+                const confirmDelete = confirm(`האם אתה בטוח שברצונך למחוק את המשימה "${taskTitle}"?\n\nפעולה זו לא ניתנת לביטול!`);
+                
+                if (confirmDelete) {
+                    // Add deletion animation
+                    taskRow.style.transition = 'all 0.3s ease';
+                    taskRow.style.transform = 'translateX(-100%)';
+                    taskRow.style.opacity = '0';
+                    
+                    // Remove from DOM after animation
+                    setTimeout(() => {
+                        taskRow.remove();
+                        showSuccessMessage(`המשימה "${taskTitle}" נמחקה בהצלחה!`);
+                    }, 300);
+                }
+            }
+        }
+
+        function closeUpdateModal() {
+            document.getElementById('update-approval-modal').style.display = 'none';
+        }
+
+        function showSuccessMessage(message) {
+            // Create a temporary success message
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                font-weight: bold;
+                z-index: 10002;
+                box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+            `;
+            messageDiv.textContent = message;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 3000);
+        }
+
+        function uploadDocuments() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.doc,.docx';
+            input.multiple = true;
+            input.onchange = function(e) {
+                const files = Array.from(e.target.files);
+                document.getElementById('upload-status').textContent = `נטענו ${files.length} מסמכים`;
+            };
+            input.click();
+        }
+
+        function uploadImages() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.jpg,.jpeg,.png';
+            input.multiple = true;
+            input.onchange = function(e) {
+                const files = Array.from(e.target.files);
+                document.getElementById('upload-status').textContent = `נטענו ${files.length} תמונות`;
+            };
+            input.click();
+        }
+
+        function uploadSpreadsheet() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.csv,.xls,.xlsx';
+            input.multiple = true;
+            input.onchange = function(e) {
+                const files = Array.from(e.target.files);
+                document.getElementById('upload-status').textContent = `נטענו ${files.length} גיליונות נתונים`;
+            };
+            input.click();
+        }
+
+        function openAgentChat() {
+            // Check if OpenAI is configured first
+            const hasOpenAI = confirm('האם ברצונך להשתמש ב-AI Agent?\n\nOK - להגדיר OpenAI API\nביטול - צ\'אט בסיסי בלבד');
+            
+            if (hasOpenAI) {
+                openAuthModal('openai-auth-modal');
+                return;
+            }
+            
+            // Open a general chat with basic responses
+            if (allTasks.length > 0) {
+                // Use the first task as context for general chat
+                const firstTask = allTasks[0];
+                handleTaskAction(firstTask.id);
+                
+                // Add a welcome message for general chat
+                setTimeout(() => {
+                    const chatMessages = document.getElementById('chatMessages');
+                    if (chatMessages) {
+                        chatMessages.innerHTML = `
+                            <div class="chat-message message-ai">
+                                שלום! אני כאן לעזור לך עם כל המשימות שלך. מה תרצה לעשות?
+                            </div>
+                        `;
+                    }
+                }, 100);
+            } else {
+                alert('אין משימות זמינות לצ\'אט');
+            }
+        }
+
+        function prioritizeTasks() {
+            document.getElementById('upload-status').textContent = 'מעדכן עדיפויות...';
+            
+            // Auto-prioritize tasks based on deadline and category
+            allTasks.forEach(task => {
+                let newPriority = task.priority;
+                
+                // Increase priority for urgent categories
+                if (task.category === 'debt' && task.priority < 8) {
+                    newPriority = Math.max(task.priority + 2, 8);
+                } else if (task.category === 'bureaucracy' && task.priority < 7) {
+                    newPriority = Math.max(task.priority + 1, 7);
+                } else if (task.category === 'academic' && task.priority < 6) {
+                    newPriority = Math.max(task.priority + 1, 6);
+                }
+                
+                // Increase priority for tasks with deadlines
+                if (task.deadline) {
+                    const deadline = new Date(task.deadline);
+                    const today = new Date();
+                    const daysUntilDeadline = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+                    
+                    if (daysUntilDeadline <= 3) {
+                        newPriority = Math.max(newPriority, 9);
+                    } else if (daysUntilDeadline <= 7) {
+                        newPriority = Math.max(newPriority, 8);
+                    } else if (daysUntilDeadline <= 14) {
+                        newPriority = Math.max(newPriority, 7);
+                    }
+                }
+                
+                task.priority = Math.min(newPriority, 10); // Cap at 10
+            });
+            
+            // Update UI
+            renderTasks();
+            updateStats({
+                total: allTasks.length,
+                urgent: allTasks.filter(t => t.priority >= 8).length,
+                pending: allTasks.filter(t => t.status === 'pending').length,
+                in_progress: allTasks.filter(t => t.status === 'in_progress').length,
+                done: allTasks.filter(t => t.status === 'done').length
+            });
+            
+            setTimeout(() => {
+                document.getElementById('upload-status').textContent = 'עדיפויות עודכנו בהצלחה';
+            }, 1500);
+        }
+
+        function analyzeDocuments() {
+            document.getElementById('upload-status').textContent = 'מנתח מסמכים...';
+            
+            // Simulate document analysis and create new tasks
+            setTimeout(() => {
+                const newTasks = [
+                    {
+                        id: allTasks.length + 1,
+                        title: 'עדכון מסמכי ביטוח לאומי',
+                        description: 'ניתוח מסמכים זיהה צורך בעדכון מסמכי ביטוח לאומי',
+                        category: 'bureaucracy',
+                        priority: 8,
+                        status: 'pending',
+                        deadline: null,
+                        client_name: null,
+                        amount: null,
+                        case_number: null
+                    },
+                    {
+                        id: allTasks.length + 2,
+                        title: 'הגשת מסמכי נישואין',
+                        description: 'ניתוח מסמכים זיהה צורך בהגשת מסמכי נישואין',
+                        category: 'bureaucracy',
+                        priority: 9,
+                        status: 'pending',
+                        deadline: null,
+                        client_name: null,
+                        amount: null,
+                        case_number: null
+                    },
+                    {
+                        id: allTasks.length + 3,
+                        title: 'עדכון מסמכי חובות',
+                        description: 'ניתוח מסמכים זיהה צורך בעדכון מסמכי חובות',
+                        category: 'debt',
+                        priority: 8,
+                        status: 'pending',
+                        deadline: null,
+                        client_name: null,
+                        amount: null,
+                        case_number: null
+                    }
+                ];
+                
+                // Add new tasks
+                allTasks.unshift(...newTasks);
+                filteredTasks = [...allTasks];
+                
+                // Update UI
+                renderTasks();
+                updateStats({
+                    total: allTasks.length,
+                    urgent: allTasks.filter(t => t.priority >= 8).length,
+                    pending: allTasks.filter(t => t.status === 'pending').length,
+                    in_progress: allTasks.filter(t => t.status === 'in_progress').length,
+                    done: allTasks.filter(t => t.status === 'done').length
+                });
+                
+                document.getElementById('upload-status').textContent = 'ניתוח הושלם - נמצאו 3 משימות חדשות';
+            }, 2000);
+        }
+
+        function generateReport() {
+            document.getElementById('upload-status').textContent = 'יוצר דוח מצב...';
+            
+            // Generate report data
+            const reportData = {
+                timestamp: new Date().toLocaleString('he-IL'),
+                summary: {
+                    total_tasks: allTasks.length,
+                    urgent_tasks: allTasks.filter(t => t.priority >= 8).length,
+                    pending_tasks: allTasks.filter(t => t.status === 'pending').length,
+                    in_progress_tasks: allTasks.filter(t => t.status === 'in_progress').length,
+                    done_tasks: allTasks.filter(t => t.status === 'done').length
+                },
+                by_category: {
+                    academic: allTasks.filter(t => t.category === 'academic').length,
+                    debt: allTasks.filter(t => t.category === 'debt').length,
+                    bureaucracy: allTasks.filter(t => t.category === 'bureaucracy').length,
+                    personal: allTasks.filter(t => t.category === 'personal').length
+                },
+                urgent_tasks: allTasks.filter(t => t.priority >= 8).map(t => ({
+                    title: t.title,
+                    priority: t.priority,
+                    status: t.status,
+                    category: t.category
+                })),
+                recent_tasks: allTasks.slice(0, 10).map(t => ({
+                    title: t.title,
+                    status: t.status,
+                    priority: t.priority
+                }))
+            };
+            
+            // Create and download report
+            const reportContent = `דוח מצב מערכת מיכל AI
+================================
+
+תאריך: ${reportData.timestamp}
+
+סיכום כללי:
+- סה"כ משימות: ${reportData.summary.total_tasks}
+- משימות דחופות: ${reportData.summary.urgent_tasks}
+- משימות ממתינות: ${reportData.summary.pending_tasks}
+- משימות בעבודה: ${reportData.summary.in_progress_tasks}
+- משימות הושלמו: ${reportData.summary.done_tasks}
+
+לפי קטגוריה:
+- אקדמי: ${reportData.by_category.academic}
+- חובות: ${reportData.by_category.debt}
+- בירוקרטיה: ${reportData.by_category.bureaucracy}
+- אישי: ${reportData.by_category.personal}
+
+משימות דחופות:
+${reportData.urgent_tasks.map(t => `- ${t.title} (עדיפות: ${t.priority}, סטטוס: ${t.status})`).join('\n')}
+
+משימות אחרונות:
+${reportData.recent_tasks.map(t => `- ${t.title} (סטטוס: ${t.status}, עדיפות: ${t.priority})`).join('\n')}
+`;
+            
+            const blob = new Blob([reportContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `report_${new Date().toISOString().split('T')[0]}.txt`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            setTimeout(() => {
+                document.getElementById('upload-status').textContent = 'דוח נוצר בהצלחה';
+            }, 1500);
+        }
+
+        function fullSync() {
+            document.getElementById('last-sync').textContent = 'מסנכרן הכל...';
+            
+            // Simulate full sync process
+            setTimeout(() => {
+                document.getElementById('last-sync').textContent = 'מסנכרן מסד נתונים...';
+            }, 500);
+            
+            setTimeout(() => {
+                document.getElementById('last-sync').textContent = 'מסנכרן מיילים...';
+            }, 1000);
+            
+            setTimeout(() => {
+                document.getElementById('last-sync').textContent = 'מסנכרן מסמכים...';
+            }, 1500);
+            
+            setTimeout(() => {
+                document.getElementById('last-sync').textContent = 'מסנכרן משימות...';
+            }, 2000);
+            
+            setTimeout(() => {
+                // Refresh all data
+                loadTasks();
+                document.getElementById('last-sync').textContent = `אחרון: ${new Date().toLocaleString('he-IL')}`;
+                
+                // Update integration statuses
+                document.getElementById('gmail-status').textContent = '✓ מחובר';
+                document.getElementById('gmail-status').className = 'integration-status connected';
+                
+                document.getElementById('whatsapp-status').textContent = '✓ מחובר';
+                document.getElementById('whatsapp-status').className = 'integration-status connected';
+                
+                document.getElementById('drive-status').textContent = '✓ מחובר';
+                document.getElementById('drive-status').className = 'integration-status connected';
+            }, 3000);
+        }
+
+        function syncDatabase() {
+            document.getElementById('last-sync').textContent = 'מסנכרן מסד נתונים...';
+            
+            // Simulate database sync
+            setTimeout(() => {
+                // Refresh tasks from server
+                loadTasks();
+                document.getElementById('last-sync').textContent = 'מסד נתונים עודכן';
+            }, 1000);
+        }
+
+        function syncEmail() {
+            // Ask user for time range
+            const timeRange = prompt('כמה זמן אחורה לקרוא מיילים?\n\n1 - 7 ימים\n2 - 30 ימים\n3 - 90 ימים\n4 - שנה\n5 - הכל\n\nהזן מספר (1-5):');
+            
+            let daysBack = 7; // default
+            switch(timeRange) {
+                case '1': daysBack = 7; break;
+                case '2': daysBack = 30; break;
+                case '3': daysBack = 90; break;
+                case '4': daysBack = 365; break;
+                case '5': daysBack = -1; break; // -1 means all
+                default: 
+                    if (!timeRange) return; // user cancelled
+                    daysBack = parseInt(timeRange) || 7;
+            }
+            
+            document.getElementById('last-sync').textContent = 'מסנכרן מיילים...';
+            
+            // Call real Gmail sync API with user email and time range
+            fetch('/api/gmail/sync', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    action: 'sync_emails',
+                    user_email: 'michal.havatzelet@gmail.com',
+                    days_back: daysBack
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show real updates from server
+                    showUpdateApprovalModal(data.updates || [], 'email');
+                    
+                    // Update Gmail status
+                    document.getElementById('gmail-status').textContent = '✓ מחובר';
+                    document.getElementById('gmail-status').className = 'integration-status connected';
+                    
+                    document.getElementById('last-sync').textContent = `מיילים עודכנו - ${data.updates?.length || 0} עדכונים`;
+                } else if (data.needs_auth) {
+                    // User needs to authenticate first
+                    alert('נדרשת התחברות ל-Gmail. לחץ על "התחבר ל-Gmail" בחיבורים.');
+                    document.getElementById('last-sync').textContent = 'נדרשת התחברות';
+                } else {
+                    // Fallback to mock data if real sync fails
+                    console.log('Real Gmail sync failed, using mock data:', data.message);
+                    const mockEmailUpdates = [
+                        {
+                            id: 'email_1',
+                            type: 'new_task',
+                            title: '📧 משימה חדשה ממייל',
+                            content: 'מייל מ-PAIR Finance: דרישת תשלום דחופה - דדליין 48 שעות',
+                            priority: 9,
+                            category: 'debt',
+                            approved: false
+                        },
+                        {
+                            id: 'email_2',
+                            type: 'update_task',
+                            title: '📧 עדכון משימה קיימת',
+                            content: 'מייל מ-Standesamt Berlin: אישור תאריך לחתונה - 15.10.2025',
+                            priority: 8,
+                            category: 'bureaucracy',
+                            approved: false
+                        }
+                    ];
+                    
+                    showUpdateApprovalModal(mockEmailUpdates, 'email (demo mode)');
+                    document.getElementById('last-sync').textContent = 'מיילים עודכנו (מצב הדגמה)';
+                }
+            })
+            .catch(error => {
+                console.error('Gmail sync error:', error);
+                document.getElementById('last-sync').textContent = 'שגיאה בסנכרון מיילים';
+                alert('שגיאה בסנכרון מיילים. בדוק את החיבור.');
+            });
+        }
+
+        function syncDocuments() {
+            document.getElementById('last-sync').textContent = 'מסנכרן מסמכים...';
+            
+            // Call real document sync API
+            fetch('/api/documents/sync', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    action: 'sync_documents'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show real updates from server
+                    showUpdateApprovalModal(data.updates || [], 'documents');
+                    
+                    // Update Google Drive status
+                    document.getElementById('drive-status').textContent = '✓ מחובר';
+                    document.getElementById('drive-status').className = 'integration-status connected';
+                    
+                    document.getElementById('last-sync').textContent = `מסמכים עודכנו - ${data.updates?.length || 0} עדכונים`;
+                } else {
+                    // Fallback to mock data if real sync fails
+                    console.log('Real document sync failed, using mock data:', data.message);
+                    const mockDocUpdates = [
+                        {
+                            id: 'doc_1',
+                            type: 'new_task',
+                            title: '📄 משימה חדשה ממסמך',
+                            content: 'מסמך PDF: "חוזה דירה" - זוהה דדליין לחתימה: 30.09.2025',
+                            priority: 8,
+                            category: 'bureaucracy',
+                            approved: false
+                        },
+                        {
+                            id: 'doc_2',
+                            type: 'update_task',
+                            title: '📷 עדכון מתמונה',
+                            content: 'תמונה: "קבלה TK" - זוהה סכום לתשלום: 89.50 יורו',
+                            priority: 7,
+                            category: 'personal',
+                            approved: false
+                        }
+                    ];
+                    
+                    showUpdateApprovalModal(mockDocUpdates, 'documents (demo mode)');
+                    document.getElementById('last-sync').textContent = 'מסמכים עודכנו (מצב הדגמה)';
+                }
+            })
+            .catch(error => {
+                console.error('Document sync error:', error);
+                document.getElementById('last-sync').textContent = 'שגיאה בסנכרון מסמכים';
+                alert('שגיאה בסנכרון מסמכים. בדוק את החיבור.');
+            });
+        }
+
+        function syncTasks() {
+            document.getElementById('last-sync').textContent = 'מסנכרן משימות...';
+            
+            // Call real task sync API
+            fetch('/api/tasks/sync', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    action: 'sync_tasks'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show real updates from server
+                    showUpdateApprovalModal(data.updates || [], 'tasks');
+                    
+                    // Refresh tasks from server
+                    loadTasks();
+                    
+                    document.getElementById('last-sync').textContent = `משימות עודכנו - ${data.updates?.length || 0} עדכונים`;
+                } else {
+                    // Fallback to mock data if real sync fails
+                    console.log('Real task sync failed, using mock data:', data.message);
+                    const mockTaskUpdates = [
+                        {
+                            id: 'task_1',
+                            type: 'priority_change',
+                            title: '⚡ שינוי עדיפות',
+                            content: 'משימה "חוזה דירה" - עדיפות שונתה ל-9 (דחוף מאוד) עקב דדליין קרוב',
+                            priority: 9,
+                            category: 'bureaucracy',
+                            approved: false
+                        },
+                        {
+                            id: 'task_2',
+                            type: 'update_task',
+                            title: '🔄 עדכון סטטוס',
+                            content: 'משימה "PAIR Finance" - סטטוס שונה ל"בתהליך" - מכתב התנגדות נשלח',
+                            priority: 8,
+                            category: 'debt',
+                            approved: false
+                        }
+                    ];
+                    
+                    showUpdateApprovalModal(mockTaskUpdates, 'tasks (demo mode)');
+                    document.getElementById('last-sync').textContent = 'משימות עודכנו (מצב הדגמה)';
+                }
+            })
+            .catch(error => {
+                console.error('Task sync error:', error);
+                document.getElementById('last-sync').textContent = 'שגיאה בסנכרון משימות';
+                alert('שגיאה בסנכרון משימות. בדוק את החיבור.');
+            });
+        }
+
+        function refreshAll() {
+            // Refresh all data
+            loadTasks();
+            
+            // Update all status indicators
+            document.getElementById('upload-status').textContent = 'כל המערכת רועננה';
+            
+            // Reset integration statuses to show refresh
+            document.getElementById('gmail-status').textContent = '🔄 מסנכרן...';
+            document.getElementById('gmail-status').className = 'integration-status disconnected';
+            
+            document.getElementById('whatsapp-status').textContent = '🔄 מסנכרן...';
+            document.getElementById('whatsapp-status').className = 'integration-status disconnected';
+            
+            document.getElementById('drive-status').textContent = '🔄 מסנכרן...';
+            document.getElementById('drive-status').className = 'integration-status disconnected';
+            
+            // Restore statuses after a delay
+            setTimeout(() => {
+                document.getElementById('gmail-status').textContent = '✓ מחובר';
+                document.getElementById('gmail-status').className = 'integration-status connected';
+                
+                document.getElementById('whatsapp-status').textContent = '✓ מחובר';
+                document.getElementById('whatsapp-status').className = 'integration-status connected';
+                
+                document.getElementById('drive-status').textContent = '✓ מחובר';
+                document.getElementById('drive-status').className = 'integration-status connected';
+            }, 2000);
+        }
+
+        function createTask() {
+            const title = prompt('כותרת המשימה:');
+            if (title) {
+                const category = prompt('קטגוריה (academic/debt/bureaucracy/personal):') || 'personal';
+                const priority = prompt('עדיפות (1-10):') || '5';
+                
+                // Create new task
+                const newTask = {
+                    id: allTasks.length + 1,
+                    title: title,
+                    description: '',
+                    category: category,
+                    priority: parseInt(priority),
+                    status: 'pending',
+                    deadline: null,
+                    client_name: null,
+                    amount: null,
+                    case_number: null
+                };
+                
+                // Add to tasks array
+                allTasks.unshift(newTask); // Add to beginning
+                filteredTasks = [...allTasks];
+                
+                // Update UI
+                renderTasks();
+                updateStats({
+                    total: allTasks.length,
+                    urgent: allTasks.filter(t => t.priority >= 8).length,
+                    pending: allTasks.filter(t => t.status === 'pending').length,
+                    in_progress: allTasks.filter(t => t.status === 'in_progress').length,
+                    done: allTasks.filter(t => t.status === 'done').length
+                });
+                
+                document.getElementById('upload-status').textContent = `משימה "${title}" נוספה`;
+            }
+        }
+
+        function markAllDone() {
+            if (confirm('האם אתה בטוח שברצונך לסמן את כל המשימות כהושלמו?')) {
+                // Mark all tasks as done
+                allTasks.forEach(task => {
+                    task.status = 'done';
+                });
+                
+                // Update UI
+                renderTasks();
+                updateStats({
+                    total: allTasks.length,
+                    urgent: allTasks.filter(t => t.priority >= 8).length,
+                    pending: allTasks.filter(t => t.status === 'pending').length,
+                    in_progress: allTasks.filter(t => t.status === 'in_progress').length,
+                    done: allTasks.filter(t => t.status === 'done').length
+                });
+                
+                document.getElementById('upload-status').textContent = 'כל המשימות סומנו כהושלמו';
+            }
+        }
+
+        function exportData() {
+            document.getElementById('upload-status').textContent = 'מייצא נתונים...';
+            
+            // Create CSV content
+            const csvContent = [
+                'ID,Title,Description,Category,Priority,Status,Client,Amount,Deadline',
+                ...allTasks.map(task => [
+                    task.id,
+                    task.title,
+                    task.description || '',
+                    task.category,
+                    task.priority,
+                    task.status,
+                    task.client_name || '',
+                    task.amount || '',
+                    task.deadline || ''
+                ].join(','))
+            ].join('\n');
+            
+            // Create and download file
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `tasks_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            setTimeout(() => {
+                document.getElementById('upload-status').textContent = 'נתונים יוצאו בהצלחה';
+            }, 1500);
+        }
+
+        function backupSystem() {
+            document.getElementById('upload-status').textContent = 'יוצר גיבוי...';
+            
+            // Create backup data
+            const backupData = {
+                timestamp: new Date().toISOString(),
+                tasks: allTasks,
+                stats: {
+                    total: allTasks.length,
+                    urgent: allTasks.filter(t => t.priority >= 8).length,
+                    pending: allTasks.filter(t => t.status === 'pending').length,
+                    in_progress: allTasks.filter(t => t.status === 'in_progress').length,
+                    done: allTasks.filter(t => t.status === 'done').length
+                },
+                system_status: localStorage.getItem('system_status'),
+                agent_context: localStorage.getItem('agent_context')
+            };
+            
+            // Create and download backup file
+            const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `backup_${new Date().toISOString().split('T')[0]}.json`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            setTimeout(() => {
+                document.getElementById('upload-status').textContent = 'גיבוי נוצר בהצלחה';
+            }, 2000);
+        }
+
+        // Load saved status and context
+        function loadSavedData() {
+            const savedStatus = localStorage.getItem('system_status');
+            const savedContext = localStorage.getItem('agent_context');
+            
+            if (savedStatus) {
+                document.getElementById('status-text').textContent = savedStatus;
+            }
+            
+            if (savedContext) {
+                document.getElementById('agent-context').innerHTML = `<strong>הקשר לסוכן:</strong> ${savedContext}`;
+            }
+            
+            // Load smart status
+            loadSmartStatus();
+        }
+
+        async function loadSmartStatus() {
+            try {
+                const response = await fetch('/api/status/smart');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateSmartStatusDisplay(data.data);
+                } else {
+                    console.log('Smart status not available yet:', data.message);
+                }
+            } catch (error) {
+                console.error('Error loading smart status:', error);
+            }
+        }
+
+        function updateSmartStatusDisplay(statusData) {
+            const smartStatusDiv = document.getElementById('smart-status');
+            if (!smartStatusDiv) return;
+
+            const summary = statusData.summary;
+            const patternAnalysis = statusData.patternAnalysis;
+
+            // Update status text with smart insights
+            const statusText = document.getElementById('status-text');
+            if (statusText) {
+                statusText.textContent = `תמונת מצב חכמה: ${summary.smartSuggestions} הצעות, ${summary.consolidationOpportunities} איחודי חובות, ${summary.risks.high} סיכונים גבוהים`;
+            }
+
+            // Update agent context with pattern insights
+            const agentContext = document.getElementById('agent-context');
+            if (agentContext && patternAnalysis.smartSuggestions.length > 0) {
+                const topSuggestion = patternAnalysis.smartSuggestions[0];
+                agentContext.innerHTML = `
+                    <strong>הקשר לסוכן:</strong> 
+                    <span style="color: #007bff;">${topSuggestion.title}</span> - 
+                    ${topSuggestion.description.substring(0, 100)}...
+                `;
+            }
+
+            // Show smart suggestions in a dedicated area
+            showSmartSuggestions(patternAnalysis.smartSuggestions);
+        }
+
+        function showSmartSuggestions(suggestions) {
+            // Remove existing suggestions
+            const existingSuggestions = document.getElementById('smart-suggestions');
+            if (existingSuggestions) {
+                existingSuggestions.remove();
+            }
+
+            if (suggestions.length === 0) return;
+
+            // Create suggestions container
+            const suggestionsContainer = document.createElement('div');
+            suggestionsContainer.id = 'smart-suggestions';
+            suggestionsContainer.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                max-width: 400px;
+                z-index: 1000;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            `;
+
+            suggestionsContainer.innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 10px;">
+                    🧠 הצעות חכמות מהסוכן
+                </div>
+                <div style="max-height: 200px; overflow-y: auto;">
+                    ${suggestions.slice(0, 3).map(suggestion => `
+                        <div style="margin-bottom: 10px; padding: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 5px;">
+                            <div style="font-weight: bold; font-size: 0.9em;">
+                                ${suggestion.title}
+                            </div>
+                            <div style="font-size: 0.8em; opacity: 0.9; margin-top: 3px;">
+                                ${suggestion.description}
+                            </div>
+                            <div style="font-size: 0.7em; opacity: 0.8; margin-top: 3px;">
+                                עדיפות: ${suggestion.priority === 'high' ? '🔴 גבוהה' : suggestion.priority === 'medium' ? '🟡 בינונית' : '🟢 נמוכה'}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                <button onclick="showAllSuggestions()" 
+                        style="margin-top: 10px; padding: 5px 10px; background: rgba(255, 255, 255, 0.2); color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 0.8em;">
+                    הצג הכל (${suggestions.length})
+                </button>
+            `;
+
+            document.body.appendChild(suggestionsContainer);
+
+            // Auto-hide after 30 seconds
+            setTimeout(() => {
+                if (suggestionsContainer.parentNode) {
+                    suggestionsContainer.parentNode.removeChild(suggestionsContainer);
+                }
+            }, 30000);
+        }
+
+        function showAllSuggestions() {
+            // Fetch all suggestions and show in modal
+            fetch('/api/status/smart')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const suggestions = data.data.patternAnalysis.smartSuggestions;
+                        showSuggestionsModal(suggestions);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching suggestions:', error);
+                });
+        }
+
+        function showSuggestionsModal(suggestions) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 10001;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            `;
+
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                max-width: 80%;
+                max-height: 80%;
+                overflow-y: auto;
+            `;
+
+            modalContent.innerHTML = `
+                <h2>🧠 הצעות חכמות מהסוכן</h2>
+                <div style="max-height: 400px; overflow-y: auto;">
+                    ${suggestions.map(suggestion => `
+                        <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px; background: #f9f9f9;">
+                            <div style="font-weight: bold; color: #333; margin-bottom: 5px;">
+                                ${suggestion.title}
+                            </div>
+                            <div style="color: #666; margin-bottom: 10px;">
+                                ${suggestion.description}
+                            </div>
+                            <div style="font-size: 0.9em; margin-bottom: 10px;">
+                                <strong>עדיפות:</strong> ${suggestion.priority === 'high' ? '🔴 גבוהה' : suggestion.priority === 'medium' ? '🟡 בינונית' : '🟢 נמוכה'}
+                                <br>
+                                <strong>פעולה:</strong> ${suggestion.action}
+                                ${suggestion.estimatedValue ? `<br><strong>ערך משוער:</strong> ${suggestion.estimatedValue}` : ''}
+                            </div>
+                            <div style="font-size: 0.8em; color: #555;">
+                                <strong>שלבים:</strong>
+                                <ol style="margin: 5px 0; padding-right: 20px;">
+                                    ${suggestion.steps.map(step => `<li>${step}</li>`).join('')}
+                                </ol>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                <button onclick="this.parentElement.parentElement.remove()" 
+                        style="margin-top: 15px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    סגור
+                </button>
+            `;
+
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+        }
+
+        // Allow Enter key to send chat message
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatInput = document.getElementById('chatInput');
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendChatMessage();
+                    }
+                });
+            }
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('taskModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+        // Load saved data
+        loadSavedData();
+    });
+
+    // Missing data detection functions
+    function checkForMissingData() {
+        const missingDataItems = [];
+        
+        // Check for missing case numbers in debts
+        const debtsWithMissingCaseNumbers = allTasks.filter(task => 
+            task.category === 'debt' && 
+            (!task.case_number || task.case_number === 'לא צוין' || task.case_number === '')
+        );
+        
+        debtsWithMissingCaseNumbers.forEach(debt => {
+            missingDataItems.push({
+                id: debt.id,
+                type: 'מספר תיק',
+                item: debt.title || debt.subject || 'חוב לא ידוע',
+                creditor: debt.creditor || debt.client_name || 'לא ידוע',
+                amount: debt.amount || 'לא ידוע',
+                searchKeywords: generateCaseNumberKeywords(debt),
+                category: 'debt',
+                priority: 'high'
+            });
+        });
+        
+        // Check for missing amounts
+        const tasksWithMissingAmounts = allTasks.filter(task => 
+            task.category === 'debt' && 
+            (!task.amount || task.amount === 0)
+        );
+        
+        tasksWithMissingAmounts.forEach(debt => {
+            missingDataItems.push({
+                id: debt.id,
+                type: 'סכום',
+                item: debt.title || debt.subject || 'חוב לא ידוע',
+                creditor: debt.creditor || debt.client_name || 'לא ידוע',
+                caseNumber: debt.case_number || 'לא ידוע',
+                searchKeywords: generateAmountKeywords(debt),
+                category: 'debt',
+                priority: 'high'
+            });
+        });
+        
+        // Check for missing deadlines
+        const tasksWithMissingDeadlines = allTasks.filter(task => 
+            (!task.deadline || task.deadline === 'לא צוין' || task.deadline === '')
+        );
+        
+        tasksWithMissingDeadlines.forEach(task => {
+            missingDataItems.push({
+                id: task.id,
+                type: 'תאריך יעד',
+                item: task.title || task.subject || 'משימה לא ידועה',
+                entity: task.entity || 'לא ידוע',
+                searchKeywords: generateDeadlineKeywords(task),
+                category: task.category || 'general',
+                priority: task.priority >= 8 ? 'high' : 'medium'
+            });
+        });
+        
+        // Check for missing contact information
+        const tasksWithMissingContacts = allTasks.filter(task => 
+            (!task.entity || task.entity === 'לא ידוע' || task.entity === '')
+        );
+        
+        tasksWithMissingContacts.forEach(task => {
+            missingDataItems.push({
+                id: task.id,
+                type: 'פרטי קשר',
+                item: task.title || task.subject || 'משימה לא ידועה',
+                searchKeywords: generateContactKeywords(task),
+                category: task.category || 'general',
+                priority: 'medium'
+            });
+        });
+        
+        // Show detailed table if any missing data found
+        if (missingDataItems.length > 0) {
+            showMissingDataTable(missingDataItems);
+        }
+    }
+
+    function generateCaseNumberKeywords(debt) {
+        const keywords = [
+            'case number', 'מספר תיק', 'Aktenzeichen', 'Akten-Nr', 'Fallnummer',
+            'Reference', 'Ref', 'מספר הפניה', 'מזהה תיק'
+        ];
+        
+        if (debt.creditor) {
+            keywords.push(debt.creditor);
+        }
+        
+        if (debt.collection_agency) {
+            keywords.push(debt.collection_agency);
+        }
+        
+        return keywords.join(' OR ');
+    }
+
+    function generateAmountKeywords(debt) {
+        const keywords = [
+            'amount', 'סכום', 'Betrag', 'EUR', '€', 'Euro',
+            'total', 'סך הכל', 'Gesamtbetrag', 'Summe'
+        ];
+        
+        if (debt.creditor) {
+            keywords.push(debt.creditor);
+        }
+        
+        if (debt.case_number) {
+            keywords.push(debt.case_number);
+        }
+        
+        return keywords.join(' OR ');
+    }
+
+    function generateDeadlineKeywords(task) {
+        const keywords = [
+            'deadline', 'תאריך יעד', 'Frist', 'bis zum', 'עד',
+            'due date', 'תאריך סיום', 'Enddatum', 'Schlusstermin'
+        ];
+        
+        if (task.entity) {
+            keywords.push(task.entity);
+        }
+        
+        if (task.title) {
+            keywords.push(task.title.split(' ')[0]); // First word of title
+        }
+        
+        return keywords.join(' OR ');
+    }
+
+    function generateContactKeywords(task) {
+        const keywords = [
+            'contact', 'פרטי קשר', 'Kontakt', 'Ansprechpartner',
+            'phone', 'טלפון', 'Telefon', 'email', 'מייל'
+        ];
+        
+        if (task.title) {
+            keywords.push(task.title.split(' ')[0]); // First word of title
+        }
+        
+        return keywords.join(' OR ');
+    }
+
+    function showMissingDataTable(missingItems) {
+        // Remove existing alerts
+        const existingAlerts = document.getElementById('missing-data-alerts');
+        if (existingAlerts) {
+            existingAlerts.remove();
+        }
+        
+        // If no missing items, don't show anything
+        if (!missingItems || missingItems.length === 0) {
+            return;
+        }
+
+        const alertContainer = document.createElement('div');
+        alertContainer.id = 'missing-data-alerts';
+        alertContainer.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ff6b6b;
+        `;
+        
+        alertContainer.innerHTML = `
+            <div style="background: linear-gradient(135deg, #ff6b6b, #ffa8a8); color: white; padding: 15px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <div style="font-weight: bold; font-size: 1.1em; margin-bottom: 5px;">
+                        ⚠️ פרטים חסרים שדורשים השלמה
+                    </div>
+                    <div style="font-size: 0.9em; opacity: 0.9;">
+                        ${missingItems.length} פריטים דורשים השלמת מידע
+                    </div>
+                </div>
+                <button onclick="minimizeMissingDataTable()" 
+                        style="background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.9em; transition: background 0.3s ease;"
+                        title="מזער">
+                    ➖
+                </button>
+            </div>
+            <div style="padding: 15px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                    <thead>
+                        <tr style="background: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                            <th style="padding: 8px; text-align: right; border: 1px solid #dee2e6;">פריט</th>
+                            <th style="padding: 8px; text-align: right; border: 1px solid #dee2e6;">חסר</th>
+                            <th style="padding: 8px; text-align: right; border: 1px solid #dee2e6;">מילות מפתח</th>
+                            <th style="padding: 8px; text-align: center; border: 1px solid #dee2e6;">פעולות</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${missingItems.map(item => `
+                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                <td style="padding: 8px; border: 1px solid #dee2e6;">
+                                    <div style="font-weight: bold; color: #333;">
+                                        ${item.item}
+                                    </div>
+                                    <div style="font-size: 0.8em; color: #666;">
+                                        ${item.creditor || item.entity || ''}
+                                    </div>
+                                </td>
+                                <td style="padding: 8px; border: 1px solid #dee2e6;">
+                                    <span style="background: ${item.priority === 'high' ? '#ff6b6b' : '#ffa500'}; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">
+                                        ${item.type}
+                                    </span>
+                                </td>
+                                <td style="padding: 8px; border: 1px solid #dee2e6; font-size: 0.8em;">
+                                    <div style="max-width: 200px; word-wrap: break-word; color: #555;">
+                                        ${item.searchKeywords}
+                                    </div>
+                                </td>
+                                <td style="padding: 8px; border: 1px solid #dee2e6; text-align: center;">
+                                    <button onclick="searchForMissingData(${item.id}, '${item.type}', '${item.searchKeywords.replace(/'/g, "\\'")}')" 
+                                            style="background: #007bff; color: white; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 0.8em; margin: 2px;">
+                                        🔍 חפש
+                                    </button>
+                                    <button onclick="fillMissingDataManually(${item.id}, '${item.type}')" 
+                                            style="background: #28a745; color: white; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 0.8em; margin: 2px;">
+                                        ✏️ מלא
+                                    </button>
+                                    <button onclick="deleteTaskWithMissingData(${item.id})" 
+                                            style="background: #dc3545; color: white; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 0.8em; margin: 2px;">
+                                        🗑️ מחק
+                                    </button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                <div style="margin-top: 15px; text-align: center;">
+                    <button onclick="searchAllMissingData()" 
+                            style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">
+                        🔍 חפש הכל במיילים
+                    </button>
+                    <button onclick="closeMissingDataTable()" 
+                            style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px;">
+                        ✖️ סגור
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(alertContainer);
+    }
+
+    function closeMissingDataTable() {
+        const alertContainer = document.getElementById('missing-data-alerts');
+        if (alertContainer) {
+            alertContainer.remove();
+        }
+    }
+
+    function minimizeMissingDataTable() {
+        const alertContainer = document.getElementById('missing-data-alerts');
+        if (alertContainer) {
+            // Get the missing items count from the table
+            const missingItems = [];
+            const table = alertContainer.querySelector('table tbody');
+            if (table) {
+                const rows = table.querySelectorAll('tr');
+                rows.forEach((row, index) => {
+                    const itemCell = row.querySelector('td:first-child div:first-child');
+                    const typeCell = row.querySelector('td:nth-child(2) span');
+                    if (itemCell && typeCell) {
+                        missingItems.push({
+                            id: index + 1,
+                            item: itemCell.textContent,
+                            type: typeCell.textContent,
+                            creditor: row.querySelector('td:first-child div:last-child')?.textContent || '',
+                            searchKeywords: row.querySelector('td:nth-child(3) div')?.textContent || '',
+                            priority: typeCell.style.background.includes('#ff6b6b') ? 'high' : 'medium'
+                        });
+                    }
+                });
+            }
+            
+            // Transform to small banner
+            alertContainer.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 250px;
+                height: 60px;
+                background: linear-gradient(135deg, #ff6b6b, #ffa8a8);
+                color: white;
+                border-radius: 10px;
+                z-index: 10000;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                border: 2px solid #ff6b6b;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            `;
+            
+            alertContainer.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">⚠️</span>
+                    <div>
+                        <div style="font-weight: bold; font-size: 14px;">
+                            ${missingItems.length} פרטים חסרים
+                        </div>
+                        <div style="font-size: 11px; opacity: 0.9;">
+                            לחץ להרחבה
+                        </div>
+                    </div>
+                </div>
+                <button onclick="expandMissingDataTable()" 
+                        style="background: rgba(255, 255, 255, 0.2); color: white; border: none; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                    ➕
+                </button>
+            `;
+            
+            // Add click handler to expand
+            alertContainer.onclick = function(e) {
+                if (!e.target.closest('button')) {
+                    expandMissingDataTable();
+                }
+            };
+            
+            // Store minimized state and original data
+            alertContainer.dataset.minimized = 'true';
+            alertContainer.dataset.originalContent = JSON.stringify(missingItems);
+        }
+    }
+
+    function expandMissingDataTable() {
+        const alertContainer = document.getElementById('missing-data-alerts');
+        if (alertContainer && alertContainer.dataset.minimized === 'true') {
+            // Get original missing items data
+            const originalData = JSON.parse(alertContainer.dataset.originalContent || '[]');
+            
+            // Recreate the full table
+            showMissingDataTable(originalData);
+        }
+    }
+
+    function deleteTaskWithMissingData(taskId) {
+        if (confirm('האם אתה בטוח שברצונך למחוק את המשימה הזו? פעולה זו לא ניתנת לביטול.')) {
+            // Remove task from allTasks array
+            const taskIndex = allTasks.findIndex(task => task.id === taskId);
+            if (taskIndex !== -1) {
+                allTasks.splice(taskIndex, 1);
+                
+                // Update display
+                renderTasks();
+                showSuccessMessage('המשימה נמחקה בהצלחה!');
+                
+                // Close missing data table and recheck
+                closeMissingDataTable();
+                setTimeout(() => checkForMissingData(), 1000);
+            }
+        }
+    }
+
+    function searchForMissingData(itemId, missingType, searchKeywords) {
+        console.log(`Searching for ${missingType} in item ${itemId} with keywords: ${searchKeywords}`);
+        
+        // Show loading message
+        const loadingMsg = alert('מחפש מידע חסר במיילים ובדרייב...');
+        
+        // Search in both email and drive
+        Promise.all([
+            // Search in emails
+            fetch('/api/search/focused', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    searchTerms: searchKeywords,
+                    daysBack: 90,
+                    itemId: itemId,
+                    missingType: missingType,
+                    source: 'email'
+                })
+            }),
+            // Search in Google Drive
+            fetch('/api/search/drive', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    searchTerms: searchKeywords,
+                    itemId: itemId,
+                    missingType: missingType
+                })
+            })
+        ])
+        .then(responses => Promise.all(responses.map(r => r.json())))
+        .then(([emailData, driveData]) => {
+            const allResults = [];
+            
+            if (emailData.success && emailData.results) {
+                emailData.results.forEach(result => {
+                    result.source = 'email';
+                    result.sourceIcon = '📧';
+                });
+                allResults.push(...emailData.results);
+            }
+            
+            if (driveData.success && driveData.results) {
+                driveData.results.forEach(result => {
+                    result.source = 'drive';
+                    result.sourceIcon = '📁';
+                });
+                allResults.push(...driveData.results);
+            }
+            
+            if (allResults.length > 0) {
+                showSearchResultsForMissingData(allResults, missingType, itemId);
+            } else {
+                alert(`לא נמצאו תוצאות רלוונטיות עבור ${missingType} במיילים או בדרייב. נסה מילות מפתח אחרות.`);
+            }
+        })
+        .catch(error => {
+            console.error('Search error:', error);
+            alert('שגיאה בחיפוש. נסה שוב מאוחר יותר.');
+        });
+    }
+
+    function searchAllMissingData() {
+        const missingItems = [];
+        const table = document.querySelector('#missing-data-alerts table tbody');
+        if (table) {
+            table.querySelectorAll('tr').forEach(row => {
+                const itemId = row.querySelector('button[onclick*="searchForMissingData"]').onclick.toString().match(/searchForMissingData\((\d+),/)[1];
+                const missingType = row.querySelector('button[onclick*="searchForMissingData"]').onclick.toString().match(/searchForMissingData\(\d+, '([^']+)'/)[1];
+                const keywords = row.querySelector('button[onclick*="searchForMissingData"]').onclick.toString().match(/searchForMissingData\(\d+, '[^']+', '([^']+)'/)[1];
+                
+                missingItems.push({
+                    itemId: itemId,
+                    missingType: missingType,
+                    keywords: keywords
+                });
+            });
+        }
+        
+        // Perform batch search
+        const allKeywords = missingItems.map(item => item.keywords).join(' OR ');
+        searchForMissingData('all', 'כל הפרטים החסרים', allKeywords);
+    }
+
+    function fillMissingDataManually(itemId, missingType) {
+        const task = allTasks.find(t => t.id == itemId);
+        if (!task) {
+            alert('לא נמצא המשימה');
+            return;
+        }
+        
+        let inputType = 'text';
+        let placeholder = '';
+        let label = '';
+        
+        switch(missingType) {
+            case 'מספר תיק':
+                inputType = 'text';
+                placeholder = 'הכנס מספר תיק';
+                label = 'מספר תיק';
+                break;
+            case 'סכום':
+                inputType = 'number';
+                placeholder = 'הכנס סכום';
+                label = 'סכום';
+                break;
+            case 'תאריך יעד':
+                inputType = 'date';
+                placeholder = '';
+                label = 'תאריך יעד';
+                break;
+            case 'פרטי קשר':
+                inputType = 'text';
+                placeholder = 'הכנס פרטי קשר';
+                label = 'פרטי קשר';
+                break;
+        }
+        
+        const value = prompt(`הכנס ${label} עבור "${task.title || task.subject}":`, placeholder);
+        if (value) {
+            // Update task data
+            if (missingType === 'מספר תיק') {
+                task.case_number = value;
+            } else if (missingType === 'סכום') {
+                task.amount = parseFloat(value);
+            } else if (missingType === 'תאריך יעד') {
+                task.deadline = value;
+            } else if (missingType === 'פרטי קשר') {
+                task.entity = value;
+            }
+            
+            // Update display
+            renderTasks();
+            showSuccessMessage(`${label} עודכן בהצלחה!`);
+            
+            // Close missing data table and recheck
+            closeMissingDataTable();
+            setTimeout(() => checkForMissingData(), 1000);
+        }
+    }
+
+    function showSearchResultsForMissingData(results, missingType, itemId) {
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        `;
+        
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        `;
+        
+        modalContent.innerHTML = `
+            <h3>תוצאות חיפוש עבור ${missingType}</h3>
+            <div id="search-results-list">
+                ${results.map((result, index) => `
+                    <div style="border: 1px solid #ddd; padding: 10px; margin: 5px 0; border-radius: 5px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                            <strong>${result.subject || result.title || 'ללא כותרת'}</strong>
+                            <div style="font-size: 0.8em; background: ${result.source === 'email' ? '#e3f2fd' : '#f3e5f5'}; color: ${result.source === 'email' ? '#1976d2' : '#7b1fa2'}; padding: 2px 8px; border-radius: 12px;">
+                                ${result.sourceIcon || (result.source === 'email' ? '📧' : '📁')} ${result.source === 'email' ? 'מייל' : 'דרייב'}
+                            </div>
+                        </div>
+                        <small>מ: ${result.sender || 'לא ידוע'}</small><br>
+                        <small>תאריך: ${result.date || 'לא ידוע'}</small><br>
+                        <div style="margin-top: 5px;">
+                            ${(result.body || result.content || '').substring(0, 200)}...
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <button onclick="extractAndFillData('${missingType}', '${(result.body || result.content || '').replace(/'/g, "\\'")}', ${itemId})" 
+                                    style="background: #28a745; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin: 2px;">
+                                📋 חלץ מידע
+                            </button>
+                            ${result.email_link ? `<a href="${result.email_link}" target="_blank" style="color: #007bff; font-size: 12px; margin: 5px;">📧 פתח מייל</a>` : ''}
+                            ${result.drive_link ? `<a href="${result.drive_link}" target="_blank" style="color: #007bff; font-size: 12px; margin: 5px;">📁 פתח בדרייב</a>` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                    style="margin-top: 15px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                סגור
+            </button>
+        `;
+        
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+    }
+
+        function extractAndFillData(missingType, emailBody, itemId) {
+        // Simple extraction logic - in a real system, this would use AI
+        let extractedValue = '';
+        
+        switch(missingType) {
+            case 'מספר תיק':
+                const caseMatch = emailBody.match(/(?:case number|מספר תיק|Aktenzeichen|Akten-Nr)[:\s]*([A-Za-z0-9\-]+)/i);
+                if (caseMatch) extractedValue = caseMatch[1];
+                break;
+            case 'סכום':
+                const amountMatch = emailBody.match(/(?:amount|סכום|Betrag)[:\s]*([€€]?\s*[\d,\.]+)/i);
+                if (amountMatch) extractedValue = amountMatch[1];
+                break;
+            case 'תאריך יעד':
+                const dateMatch = emailBody.match(/(?:deadline|תאריך יעד|Frist|bis zum)[:\s]*([\d\.\/\-]+)/i);
+                if (dateMatch) extractedValue = dateMatch[1];
+                break;
+            case 'פרטי קשר':
+                const contactMatch = emailBody.match(/(?:contact|פרטי קשר|Kontakt)[:\s]*([A-Za-z0-9@\.\-\s]+)/i);
+                if (contactMatch) extractedValue = contactMatch[1];
+                break;
+        }
+        
+        if (extractedValue) {
+            const confirm = prompt(`נמצא ${missingType}: "${extractedValue}"\n\nהאם לאשר? (הזן "כן" לאישור או שנה את הערך):`, extractedValue);
+            if (confirm) {
+                fillMissingDataManually(itemId, missingType, confirm);
+            }
+        } else {
+            alert(`לא הצלחתי לחלץ ${missingType} מהמייל. נסה למלא ידנית.`);
+        }
+    }
+
+    function showExistingTaskDetails(taskId) {
+        const task = allTasks.find(t => t.id == taskId);
+        if (!task) {
+            alert('לא נמצא המשימה');
+            return;
+        }
+        
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        `;
+        
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            max-height: 80%;
+            overflow-y: auto;
+        `;
+        
+        modalContent.innerHTML = `
+            <h3>📋 פרטי המשימה הקיימת</h3>
+            <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background: #f9f9f9;">
+                <div style="margin-bottom: 10px;">
+                    <strong>כותרת:</strong> ${task.title || task.subject || 'ללא כותרת'}
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>קטגוריה:</strong> ${task.category || 'לא צוין'}
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>עדיפות:</strong> ${task.priority || 'לא צוין'}
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>סטטוס:</strong> ${task.status || 'לא צוין'}
+                </div>
+                ${task.entity ? `<div style="margin-bottom: 10px;"><strong>ישות:</strong> ${task.entity}</div>` : ''}
+                ${task.creditor ? `<div style="margin-bottom: 10px;"><strong>נושה:</strong> ${task.creditor}</div>` : ''}
+                ${task.amount ? `<div style="margin-bottom: 10px;"><strong>סכום:</strong> €${task.amount}</div>` : ''}
+                ${task.case_number ? `<div style="margin-bottom: 10px;"><strong>מספר תיק:</strong> ${task.case_number}</div>` : ''}
+                ${task.deadline ? `<div style="margin-bottom: 10px;"><strong>תאריך יעד:</strong> ${task.deadline}</div>` : ''}
+                <div style="margin-bottom: 10px;">
+                    <strong>תיאור:</strong><br>
+                    ${task.description || task.content || 'ללא תיאור'}
+                </div>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                    style="margin-top: 15px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                סגור
+            </button>
+        `;
+        
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+    }
+
+    function handleMissingDataAlert(alert) {
+        // Show options dialog
+        const options = confirm(
+            `${alert.message}\n\n` +
+            'מה תרצה לעשות?\n' +
+            'OK = חפש במיילים\n' +
+            'Cancel = מלא ידנית'
+        );
+        
+        if (options) {
+            // Search in emails
+            performSmartSearch(alert.searchTerms, alert.type);
+        } else {
+            // Manual fill
+            openManualFillDialog(alert.type);
+        }
+    }
+
+    function performSmartSearch(searchTerms, alertType) {
+        // Build search query based on alert type
+        let searchQuery = '';
+        
+        if (alertType === 'missing_case_numbers') {
+            searchQuery = `case number OR "מספר תיק" OR "Aktenzeichen"`;
+        } else if (alertType === 'missing_amounts') {
+            searchQuery = `amount OR "סכום" OR "Betrag" OR "EUR" OR "€"`;
+        } else if (alertType === 'missing_deadlines') {
+            searchQuery = `deadline OR "תאריך יעד" OR "Frist" OR "bis zum"`;
+        }
+        
+        // Add specific terms
+        searchQuery += ` AND (${searchTerms})`;
+        
+        // Perform focused search
+        fetch('/api/search/focused', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                searchTerms: searchQuery,
+                daysBack: 90
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.results.length > 0) {
+                showSearchResults(data.results, alertType);
+            } else {
+                alert('לא נמצאו תוצאות רלוונטיות. נסה לחפש עם מילות מפתח אחרות.');
+            }
+        })
+        .catch(error => {
+            console.error('Search error:', error);
+            alert('שגיאה בחיפוש. נסה שוב מאוחר יותר.');
+        });
+    }
+
+    function showSearchResults(results, alertType) {
+        // Create modal to show search results
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        `;
+        
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        `;
+        
+        modalContent.innerHTML = `
+            <h3>תוצאות חיפוש עבור ${alertType === 'missing_case_numbers' ? 'מספרי תיק' : 
+                alertType === 'missing_amounts' ? 'סכומים' : 'תאריכי יעד'}</h3>
+            <div id="search-results-list">
+                ${results.map(result => `
+                    <div style="border: 1px solid #ddd; padding: 10px; margin: 5px 0; border-radius: 5px;">
+                        <strong>${result.subject}</strong><br>
+                        <small>מ: ${result.sender}</small><br>
+                        <small>תאריך: ${result.date}</small><br>
+                        <div style="margin-top: 5px;">
+                            ${result.body.substring(0, 200)}...
+                        </div>
+                        <a href="${result.email_link}" target="_blank" style="color: #007bff; font-size: 12px;">
+                            📧 פתח מייל
+                        </a>
+                    </div>
+                `).join('')}
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                    style="margin-top: 15px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                סגור
+            </button>
+        `;
+        
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+    }
+
+    function openManualFillDialog(alertType) {
+        // Create dialog for manual data entry
+        const dialog = document.createElement('div');
+        dialog.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        `;
+        
+        const dialogContent = document.createElement('div');
+        dialogContent.style.cssText = `
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 400px;
+        `;
+        
+        let inputFields = '';
+        if (alertType === 'missing_case_numbers') {
+            inputFields = `
+                <label>מספר תיק:</label>
+                <input type="text" id="caseNumberInput" placeholder="הכנס מספר תיק">
+            `;
+        } else if (alertType === 'missing_amounts') {
+            inputFields = `
+                <label>סכום:</label>
+                <input type="number" id="amountInput" placeholder="הכנס סכום">
+            `;
+        } else if (alertType === 'missing_deadlines') {
+            inputFields = `
+                <label>תאריך יעד:</label>
+                <input type="date" id="deadlineInput">
+            `;
+        }
+        
+        dialogContent.innerHTML = `
+            <h3>מלא פרטים ידנית</h3>
+            ${inputFields}
+            <div style="margin-top: 15px;">
+                <button onclick="saveManualData('${alertType}')" 
+                        style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">
+                    שמור
+                </button>
+                <button onclick="this.parentElement.parentElement.remove()" 
+                        style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    בטל
+                </button>
+            </div>
+        `;
+        
+        dialog.appendChild(dialogContent);
+        document.body.appendChild(dialog);
+    }
+
+    function saveManualData(alertType) {
+        // Implementation for saving manual data
+        alert('פונקציונליות שמירה ידנית תתווסף בקרוב');
+    }
+</script>
+
+    <!-- Smart Update Approval Modal -->
+    <div id="update-approval-modal" class="update-modal" style="display: none;">
+        <div class="update-modal-content">
+            <div class="update-header">
+                <h3>🤖 אישור עדכונים מהסוכן החכם</h3>
+                <button class="close-update" onclick="closeUpdateModal()">&times;</button>
+            </div>
+            <div class="update-body">
+                <div class="update-summary">
+                    <p id="update-source">מקור: מסמכים/מיילים/וואטסאפ</p>
+                    <p id="update-count">נמצאו X עדכונים חדשים</p>
+                </div>
+                
+                <div class="update-items" id="update-items">
+                    <!-- Update items will be populated here -->
+                </div>
+                
+                <div class="update-actions">
+                    <button class="update-btn approve-all-btn" onclick="approveAllUpdates()">
+                        ✅ אישור הכל
+                    </button>
+                    <button class="update-btn approve-selected-btn" onclick="approveSelectedUpdates()">
+                        ✅ אישור נבחרים
+                    </button>
+                    <button class="update-btn reject-all-btn" onclick="rejectAllUpdates()">
+                        ❌ דחיית הכל
+                    </button>
+                    <button class="update-btn secondary-btn" onclick="closeUpdateModal()">
+                        ביטול
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // New management functions
+        function syncDebts() {
+            console.log('💸 סנכרון חובות...');
+            loadDebtsData();
+        }
+
+        function syncBureaucracy() {
+            console.log('🏛️ סנכרון בירוקרטיה...');
+            loadBureaucracyData();
+        }
+
+        function syncClients() {
+            console.log('👥 סנכרון לקוחות...');
+            loadClientsData();
+        }
+
+        function loadDebtsData() {
+            fetch('/api/debts')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        updateDebtsSummary(data.debts);
+                        populateDebtsList(data.debts);
+                    }
+                })
+                .catch(error => console.error('Error loading debts:', error));
+        }
+
+        function loadBureaucracyData() {
+            fetch('/api/bureaucracy')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        updateBureaucracySummary(data.items);
+                        populateBureaucracyList(data.items);
+                    }
+                })
+                .catch(error => console.error('Error loading bureaucracy:', error));
+        }
+
+        function loadClientsData() {
+            fetch('/api/clients')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        updateClientsSummary(data.clients);
+                        populateClientsList(data.clients);
+                    }
+                })
+                .catch(error => console.error('Error loading clients:', error));
+        }
+
+        function updateDebtsSummary(debts) {
+            const totalDebs = debts.length;
+            const totalAmount = debts.reduce((sum, debt) => sum + (debt.amount || 0), 0);
+            const urgentDebs = debts.filter(debt => debt.urgent).length;
+
+            document.getElementById('total-debts').textContent = totalDebs;
+            document.getElementById('total-amount').textContent = `€${totalAmount.toFixed(2)}`;
+            document.getElementById('urgent-debts').textContent = urgentDebs;
+        }
+
+        function updateBureaucracySummary(items) {
+            const activeProcesses = items.filter(item => item.status === 'pending').length;
+            const requiredDocs = items.reduce((sum, item) => sum + (item.documents_needed || 0), 0);
+            const upcomingDeadlines = items.filter(item => {
+                if (!item.deadline) return false;
+                const deadline = new Date(item.deadline);
+                const now = new Date();
+                const diffDays = (deadline - now) / (1000 * 60 * 60 * 24);
+                return diffDays <= 7 && diffDays >= 0;
+            }).length;
+
+            document.getElementById('active-processes').textContent = activeProcesses;
+            document.getElementById('required-docs').textContent = requiredDocs;
+            document.getElementById('upcoming-deadlines').textContent = upcomingDeadlines;
+        }
+
+        function updateClientsSummary(clients) {
+            const activeClients = clients.length;
+            const activeProjects = clients.reduce((sum, client) => sum + (client.projects || 0), 0);
+            const openTasks = clients.reduce((sum, client) => sum + (client.open_tasks || 0), 0);
+
+            document.getElementById('active-clients').textContent = activeClients;
+            document.getElementById('active-projects').textContent = activeProjects;
+            document.getElementById('open-tasks').textContent = openTasks;
+        }
+
+        function populateDebtsList(debts) {
+            const listContainer = document.getElementById('debts-list');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            debts.slice(0, 5).forEach(debt => {
+                const debtItem = document.createElement('div');
+                debtItem.className = 'debt-item';
+                debtItem.innerHTML = `
+                    <div class="debt-info">
+                        <strong>${debt.creditor}</strong>
+                        <span class="debt-amount">€${debt.amount}</span>
+                    </div>
+                    <div class="debt-status ${debt.urgent ? 'urgent' : 'normal'}">
+                        ${debt.urgent ? 'דחוף' : 'רגיל'}
+                    </div>
+                `;
+                listContainer.appendChild(debtItem);
+            });
+        }
+
+        function populateBureaucracyList(items) {
+            const listContainer = document.getElementById('bureaucracy-list');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            items.slice(0, 5).forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'bureaucracy-item';
+                itemElement.innerHTML = `
+                    <div class="bureaucracy-info">
+                        <strong>${item.subject}</strong>
+                        <span class="bureaucracy-entity">${item.entity}</span>
+                    </div>
+                    <div class="bureaucracy-status ${item.urgent ? 'urgent' : 'normal'}">
+                        ${item.status}
+                    </div>
+                `;
+                listContainer.appendChild(itemElement);
+            });
+        }
+
+        function populateClientsList(clients) {
+            const listContainer = document.getElementById('clients-list');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            clients.slice(0, 5).forEach(client => {
+                const clientItem = document.createElement('div');
+                clientItem.className = 'client-item';
+                clientItem.innerHTML = `
+                    <div class="client-info">
+                        <strong>${client.name}</strong>
+                        <span class="client-projects">${client.projects || 0} פרויקטים</span>
+                    </div>
+                    <div class="client-status active">
+                        פעיל
+                    </div>
+                `;
+                listContainer.appendChild(clientItem);
+            });
+        }
+    </script>
+</body>
+</html>

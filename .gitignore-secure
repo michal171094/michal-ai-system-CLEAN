@@ -1,0 +1,52 @@
+# קבצים עם מפתחות רגישים
+config.env
+.env
+.env.local
+.env.production
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# מפתחות וסודות
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+
+# מסדי נתונים מקומיים
+*.db
+*.sqlite
+*.sqlite3
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# בניה וזמניים
+dist/
+build/
+temp/
+tmp/
+
+# קבצים אישיים
+personal/
+private/
+my-keys/

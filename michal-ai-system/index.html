@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>עוזרת AI אישית - מיכל</title>
+  <style>
+    /* Critical inline CSS */
+    :root {
+      --primary-purple: #96758d;
+      --secondary-teal: #75968c;
+      --background-main: #e6d3d9;
+      --background-cards: #f9f6f7;
+      --text-regular: #333333;
+      --text-secondary: #96758d;
+    }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0; 
+      background: var(--background-main);
+      color: var(--text-regular);
+      direction: rtl;
+    }
+    .app-container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+    .app-header { background: var(--background-cards); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+    .nav-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+    .nav-tab { 
+      padding: 12px 20px; 
+      border: none; 
+      border-radius: 8px; 
+      background: var(--background-cards);
+      color: var(--text-regular);
+      cursor: pointer;
+    }
+    .nav-tab.active { background: var(--primary-purple); color: white; }
+    .app-main { display: grid; grid-template-columns: 1fr 350px; gap: 20px; }
+    .tab-panel { display: none; background: var(--background-cards); padding: 20px; border-radius: 12px; }
+    .tab-panel.active { display: block; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+    .stat-card { 
+      background: white; 
+      padding: 15px; 
+      border-radius: 8px; 
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .stat-number { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
+    .connector-card { 
+      background: white; 
+      padding: 20px; 
+      border-radius: 12px; 
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .connector-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .status-chip { 
+      padding: 4px 12px; 
+      border-radius: 12px; 
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .status-chip.offline { background: #fee; color: #c44; }
+    .status-chip.online { background: #efe; color: #4a4; }
+    .action-btn { 
+      padding: 8px 16px; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .action-btn.primary { background: var(--primary-purple); color: white; }
+    .action-btn.secondary { background: var(--secondary-teal); color: white; }
+    .chat-section { 
+      background: var(--background-cards); 
+      border-radius: 12px; 
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+    }
+    .table-container { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { padding: 8px; text-align: right; border-bottom: 1px solid #ddd; }
+    th { background: var(--background-main); font-weight: bold; }
+    .empty-state { text-align: center; padding: 40px; color: var(--text-secondary); }
+  </style>
+  <link rel="stylesheet" href="style.css?v=20250926-5">
+  <link rel="stylesheet" href="modal-styles.css?v=20250926-5">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>מערכת מיכל AI</h1>
+                <div class="header-info">
+                    <span class="status-indicator active">🟢 מחובר</span>
+                    <span class="user-info">👋 שלום מיכל!</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="smart-overview">🤖 סקירה חכמה</button>
+                <button class="nav-tab" data-tab="tasks">📝 משימות</button>
+                <button class="nav-tab" data-tab="debts">💰 חובות</button>
+                <button class="nav-tab" data-tab="bureaucracy">🏛️ ביורוקרטיה</button>
+                <button class="nav-tab" data-tab="connector-status">🔗 מחברים</button>
+            </div>
+        </nav>
+
+        <main class="app-main">
+            <div class="content-section">
+                <!-- Smart Overview Panel -->
+                <section id="smart-overview" class="tab-panel active">
+                    <div id="systemStatusIndicator" class="system-status">
+                        <span class="status-dot active"></span>
+                        <span class="status-text">מערכת פעילה</span>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card critical">
+                            <div class="stat-number" id="criticalCount">0</div>
+                            <div class="stat-label">קריטיים</div>
+                        </div>
+                        <div class="stat-card urgent">
+                            <div class="stat-number" id="urgentCount">0</div>
+                            <div class="stat-label">דחופים</div>
+                        </div>
+                        <div class="stat-card pending">
+                            <div class="stat-number" id="pendingCount">0</div>
+                            <div class="stat-label">פתוחים</div>
+                        </div>
+                        <div class="stat-card emails">
+                            <div class="stat-number" id="emailTasksCount">0</div>
+                            <div class="stat-label">מיילים</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="smart-table">
+                            <thead>
+                                <tr>
+                                    <th>AI</th>
+                                    <th>כותרת</th>
+                                    <th>תחום</th>
+                                    <th>גורם</th>
+                                    <th>דדליין</th>
+                                    <th>נותר</th>
+                                    <th>דחיפות</th>
+                                    <th>פעולה</th>
+                                </tr>
+                            </thead>
+                            <tbody id="smartTableBody">
+                                <tr><td colspan="8" style="text-align:center;padding:20px;">⏳ טוען נתונים...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="domains-grid">
+                        <section>
+                            <h3>אקדמיה</h3>
+                            <table id="academicTable">
+                                <thead>
+                                    <tr>
+                                        <th>פרויקט</th><th>לקוח</th><th>דדליין</th><th>סטטוס</th><th>דחיפות</th><th>פעולה</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </section>
+                        <section>
+                            <h3>חובות</h3>
+                            <table id="debtsTable">
+                                <thead>
+                                    <tr>
+                                        <th>נושה</th><th>חברה</th><th>סכום</th><th>מספר תיק</th><th>סטטוס</th><th>דדליין</th><th>פעולה</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </section>
+                        <section>
+                            <h3>בירוקרטיה</h3>
+                            <table id="bureaucracyTable">
+                                <thead>
+                                    <tr>
+                                        <th>משימה</th><th>רשות</th><th>דדליין</th><th>סטטוס</th><th>דחיפות</th><th>פעולה</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </section>
+                    </div>
+                </section>
+
+                <!-- Tasks Panel -->
+                <section id="tasks" class="tab-panel">
+                    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>📝 משימות</h2>
+                        <button class="btn btn-primary" id="addNewTaskBtn" style="padding: 8px 16px;">➕ הוסף משימה</button>
+                    </div>
+                    <!-- Quick add section will be added dynamically by JS -->
+                    <div class="empty-state">ניהול משימות יופיע כאן.</div>
+                </section>
+
+                <!-- Debts Panel -->
+                <section id="debts" class="tab-panel">
+                    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>💰 חובות</h2>
+                        <button class="btn btn-primary" onclick="addQuickItem('debts')" style="padding: 8px 16px;">➕ הוסף חוב</button>
+                    </div>
+                    <!-- Quick add section will be added dynamically by JS -->
+                    <div class="empty-state">ניהול חובות יופיע כאן.</div>
+                </section>
+
+                <!-- Bureaucracy Panel -->
+                <section id="bureaucracy" class="tab-panel">
+                    <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>🏛️ ביורוקרטיה</h2>
+                        <button class="btn btn-primary" onclick="addQuickItem('bureaucracy')" style="padding: 8px 16px;">➕ הוסף פריט</button>
+                    </div>
+                    <!-- Quick add section will be added dynamically by JS -->
+                    <div class="empty-state">ניהול בירוקרטיה יופיע כאן.</div>
+                </section>
+
+                <!-- Connectors Panel -->
+                <section id="connector-status" class="tab-panel">
+                    <h2>חיבורים ושירותים</h2>
+                    <div class="connectors-grid">
+                        <section class="connector-card">
+                            <div class="connector-header">
+                                <div>
+                                    <h3>📧 Gmail</h3>
+                                    <p class="connector-subtitle">סנכרון מיילים חכם עם AI</p>
+                                </div>
+                                <span id="gmailStatusBadge" class="status-chip offline">מנותק</span>
+                            </div>
+                            <div class="connector-body">
+                                <p class="connector-info" id="gmailStatusInfo">בודק סטטוס...</p>
+                                <div class="accounts-list" id="gmailAccountsList"></div>
+                                <div class="connector-actions">
+                                    <button id="gmailConnectBtn" class="action-btn primary">🔗 התחברות</button>
+                                    <button id="gmailRefreshBtn" class="action-btn secondary">🔄 בדיקת סטטוס</button>
+                                    <button id="gmailQuickSyncBtn" class="action-btn secondary">🧠 סנכרן עם AI</button>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="connector-card">
+                            <div class="connector-header">
+                                <div>
+                                    <h3>📄 מסמכים</h3>
+                                    <p class="connector-subtitle">העלאה בבולק עם OCR ו-AI</p>
+                                </div>
+                                <span class="status-chip online">פעיל</span>
+                            </div>
+                            <div class="connector-body">
+                                <p class="connector-info">העלה מסמכים לעיבוד אוטומטי עם זיהוי טקסט וניתוח AI</p>
+                                <div class="connector-actions">
+                                    <input type="file" id="documentUpload" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" style="display: none;">
+                                    <button id="uploadDocBtn" class="action-btn primary">📄 העלה מסמכים</button>
+                                    <button onclick="openDocumentUploadModal()" class="action-btn secondary">📚 העלאה מתקדמת</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Side - Chat -->
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h3>עוזרת AI</h3>
+                    <div class="chat-status"><div class="status-indicator online"></div><span>מחוברת</span></div>
+                </div>
+                <div class="quick-questions">
+                    <h4>שאלות מהירות:</h4>
+                    <div class="quick-question-buttons">
+                        <button class="quick-btn" data-question="מה דחוף היום?">מה דחוף היום?</button>
+                        <button class="quick-btn" data-question="איך אני עונה ל-PAIR Finance?">איך עונים ל-PAIR Finance?</button>
+                        <button class="quick-btn" data-question="מה המצב עם הבירוקרטיה?">מצב הבירוקרטיה</button>
+                        <button class="quick-btn" data-question="הכן טיוטת מייל">הכנת טיוטת מייל</button>
+                    </div>
+                </div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input-area">
+                    <div class="file-upload-mini">
+                        <input type="file" id="chatFileInput" class="hidden" multiple>
+                        <button class="file-btn" id="fileUploadBtn">📎</button>
+                    </div>
+                    <div class="voice-input"><button class="voice-btn" id="voiceBtn">🎤</button></div>
+                    <div class="text-input">
+                        <textarea id="chatInput" placeholder="הקלידי שאלה או בקשה..." rows="2"></textarea>
+                        <button class="send-btn" id="sendBtn">שלח</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sync Modal -->
+    <div id="syncModal" class="sync-modal" style="display:none;">
+        <div class="sync-modal-content">
+            <div class="sync-modal-header">
+                <h3 id="syncModalTitle" class="sync-modal-title">עדכונים ממתינים</h3>
+                <button class="sync-modal-close" id="syncModalClose">&times;</button>
+            </div>
+            <div id="syncModalBody" class="sync-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts at the end -->
+    <script src="app.js?v=20250926-4"></script>
+</body>
+</html>
+                                <option value="7">שבוע אחרון</option>
+                                <option value="30">חודש אחרון</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" onclick="closeGmailSyncModal()">ביטול</button>
+                <button class="btn btn--primary" id="approveGmailSync">✅ אשר עדכונים</button>
+                <button class="btn btn--success" id="syncAndLearn">🧠 אשר ולמד מהבחירות</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Chat Modal -->
+        <!-- Smart Chat Modal -->
+    <div id="smartChatModal" class="modal" style="display: none;">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>💬 צ'אט עם המערכת</h3>
+                <button class="modal-close" onclick="closeSmartChatModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-container">
+                    <div id="smartChatMessages" class="smart-chat-messages">
+                        <div class="chat-message ai-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>שלום מיכל! אני יכול לעזור לך עם:</p>
+                                <ul>
+                                    <li>🔄 עדכון קוד המערכת</li>
+                                    <li>⚙️ שינוי הגדרות הסוכן</li>
+                                    <li>🎯 יצירת כללי סינון חדשים</li>
+                                    <li>📝 כתיבת טיוטות מיילים</li>
+                                    <li>🧠 למידה מהפידבק שלך</li>
+                                </ul>
+                                <p>מה את רוצה לשנות או לשפר?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="addQuickMessage('שנה את צבע המערכת לורוד-ירוק')">🎨 שנה עיצוב</button>
+                            <button class="quick-action-btn" onclick="addQuickMessage('הוסף כלל סינון למיילי PAIR Finance')">⚙️ הוסף כלל</button>
+                            <button class="quick-action-btn" onclick="addQuickMessage('כתוב טיוטה להתנגדות לחוב')">✍️ כתוב טיוטה</button>
+                            <button class="quick-action-btn" onclick="addQuickMessage('למד מהאישורים שלי היום')">🧠 למידה</button>
+                        </div>
+                        <div class="chat-input-area">
+                            <textarea id="smartChatInput" placeholder="תאר מה את רוצה לשנות או לשפר במערכת..." rows="3"></textarea>
+                            <button id="sendSmartChatBtn" class="btn btn--primary">שלח</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Upload Modal -->
+    <div id="documentUploadModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📄 העלאת מסמכים ל-Google Drive</h3>
+                <button class="modal-close" onclick="closeDocumentUploadModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📤</div>
+                    <h4>גרור מסמכים לכאן או לחץ לבחירה</h4>
+                    <p>תמיכה ב-PDF, DOC, DOCX, JPG, PNG (עד 10MB כל קובץ)</p>
+                    <input type="file" id="documentInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display: none;">
+                    <button class="btn btn--secondary" onclick="document.getElementById('documentInput').click()">
+                        📂 בחר קבצים
+                    </button>
+                </div>
+                <div id="uploadProgress" style="display: none;">
+                    <h4>מעלה מסמכים...</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div id="uploadStatus">מכין קבצים...</div>
+                </div>
+                <div id="uploadResults" style="display: none;">
+                    <h4>תוצאות העלאה:</h4>
+                    <div id="resultsContainer"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" onclick="closeDocumentUploadModal()">סגור</button>
+                <button class="btn btn--primary" id="startUploadBtn" onclick="startDocumentUpload()" style="display: none;">
+                    🚀 התחל העלאה
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Added version query to bust cache so שהקובץ המעודכן ייטען -->
+    <script src="app.js?v=20250926-fixed"></script>
+</body>
+</html>

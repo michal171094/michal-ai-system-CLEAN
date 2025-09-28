@@ -1,0 +1,12 @@
+# Life Orchestrator Requirements
+fastapi>=0.115.4
+uvicorn>=0.32.0
+pydantic>=2.9.2
+python-dotenv>=1.0.0
+
+# Optional for advanced features
+# langgraph>=0.2.48
+# langchain>=0.3.7
+# langchain-openai>=0.2.5
+# neo4j>=5.0.0
+# redis>=5.0.0
